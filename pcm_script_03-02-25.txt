@@ -1,0 +1,89 @@
+C:\Users\Velam\AppData\Local\Google\Cloud SDK>bq mk pcm_stg_ds
+Dataset 'project-bigquery-448808:pcm_stg_ds' successfully created.
+
+C:\Users\Velam\AppData\Local\Google\Cloud SDK>bq mk --schema="D:\GCP\pcm_schema_stg_01-02-25.json" pcm_stg_ds.pcm_stg_t
+Table 'project-bigquery-448808:pcm_stg_ds.pcm_stg_t' successfully created.
+
+C:\Users\Velam\AppData\Local\Google\Cloud SDK>bq load --source_format=CSV --skip_leading_rows=1 pcm_stg_ds.pcm_stg_t "D:\GCP\pcm_cards_01-02-25.csv"
+Upload complete.
+Waiting on bqjob_r52435ccd57a6be1b_00000194ca81658a_1 ... (0s) Current status: DONE
+
+C:\Users\Velam\AppData\Local\Google\Cloud SDK>bq query select * from pcm_stg_ds.pcm_stg_t
+
+C:\Users\Velam\AppData\Local\Google\Cloud SDK>bq load --source_format=CSV --skip_leading_rows=1 pcm_stg_ds.pcm_stg_t "D:\GCP\pcm_cards_01-02-25.csv"
+Upload complete.
+Waiting on bqjob_r52435ccd57a6be1b_00000194ca81658a_1 ... (0s) Current status: DONE
+
+C:\Users\Velam\AppData\Local\Google\Cloud SDK>bq query select * from pcm_stg_ds.pcm_stg_t
++------------+----------+-----------------+---------------+---------------+--------------------+------------------+----------------+-----------------+-----------------+-----------+----------------+--------------------+--------------------+--------------------+------------------+----------+---------------+---------------+---------------+-------------------+----------------+--------------------+-----------------+-------------------+-------------------+------------------+---------------+------------------+------------------+--------------+---------------+----------------+---------------+----------------+
+|   SYS_DT   |  SYS_TM  | CREDIT_CARD_NUM | TRAN_LOCAL_DT | TRAN_LOCAL_TM | CREDIT_CARD_ORG_ID |    PROD_NAME     | TRAN_MRCH_TYPE |  TRAN_MRCH_ID   | TRAN_MRCH_NAME  | TRAN_TYPE | CREDIT_BAL_VAL | TRAN_SYSTM_ACT_VAL | TRAN_FINAL_ACT_VAL | TRAN_REQUST_TYP_ID | TRAN_ACTION_DESC | TRAN_AMT | TRAN_DCML_NUM | TRAN_BILL_AMT | TRAN_BILL_CDE | ORG_CURR_DCML_NUM | TRAN_CRNCY_CDE | TRAN_ACTN_LNG_DESC | TRAN_ACTION_CDE | TRAN_POS_DATA_VAL | TRAN_POS_COND_CDE | CREDIT_LIMIT_AMT | ITRAN_CAT_CDE | TRAN_POS_ENT_CDE | ITRAN_TUN_REQ_ID | TRAN_TKN_MSG | TRAN_SUB_DATA | CREDIT_ACC_NUM | CREDIT_CRD_ID | TRAN_PROC_CODE |
++------------+----------+-----------------+---------------+---------------+--------------------+------------------+----------------+-----------------+-----------------+-----------+----------------+--------------------+--------------------+--------------------+------------------+----------+---------------+---------------+---------------+-------------------+----------------+--------------------+-----------------+-------------------+-------------------+------------------+---------------+------------------+------------------+--------------+---------------+----------------+---------------+----------------+
+| 27-05-2020 | 15.42.56 | 4.51E+15        | 27-05-2020    | 15.42.56      | 0
+    | MASTER           | 5999           | CARD ACCEPTOR   | ACQUIRER NAME   | 510       | 0              | D                  | D                  | A                  | CARD INACT       | 1700     | 2             | 0             | 826           | 2                 | 826            | CARD NOT ACTIVATED | 70              | NULL              | 0                 | 0                | NULL          | 50000100000      | NULL             | NULL         | NULL          | 4.51E+15       | 1             | 0              |
+| 27-05-2020 | 15.42.56 | 4.51E+15        | 27-05-2020    | 15.42.56      | 0
+    | VISA             | 5999           | CARD ACCEPTOR   | ACQUIRER NAME   | 510       | 0              | D                  | D                  | A                  | CARD INACT       | 1700     | 2             | 0             | 826           | 2                 | 826            | CARD NOT ACTIVATED | 70              | NULL              | 0                 | 0                | NULL          | 50000100000      | NULL             | NULL         | NULL          | 4.51E+15       | 1             | 0              |
+| 27-05-2020 | 15.42.56 | 4.51E+15        | 27-05-2020    | 15.42.56      | 0
+    | MASTER           | 5999           | CARD ACCEPTOR   | ACQUIRER NAME   | 510       | 0              | D                  | D                  | A                  | CARD INACT       | 1700     | 2             | 0             | 826           | 2                 | 826            | CARD NOT ACTIVATED | 70              | NULL              | 0                 | 0                | NULL          | 50000100000      | NULL             | NULL         | NULL          | 4.51E+15       | 1             | 0              |
+
+
+C:\Users\Velam\AppData\Local\Google\Cloud SDK>bq mk pcm_hist_ds
+Dataset 'project-bigquery-448808:pcm_hist_ds' successfully created.
+
+
+C:\Users\Velam\AppData\Local\Google\Cloud SDK>bq mk --schema="D:\GCP\pcm_schema_stg_01-02-25.json" pcm_hist_ds.pcm_hist_t
+Table 'project-bigquery-448808:pcm_hist_ds.pcm_hist_t' successfully created.
+
+
+CREATE TABLE
+  pcm_hist_ds.pcm_hist_t AS
+SELECT
+  CASE
+    WHEN REGEXP_CONTAINS(SYS_DT, r'^\d{1,2}/\d{1,2}/\d{4}$') THEN SAFE_CAST(SYS_DT AS DATE)
+    WHEN REGEXP_CONTAINS(SYS_DT, r'^\d{1,2}-\d{1,2}-\d{4}$') THEN SAFE_CAST(REPLACE(SYS_DT, '-', '/') AS DATE)
+    ELSE NULL
+  END AS sys_dt,
+  SAFE_CAST(REPLACE(SYS_TM, '.', ':') AS TIME) AS SYS_TM,
+ CREDIT_CARD_NUM,
+  CASE
+    WHEN REGEXP_CONTAINS(TRAN_LOCAL_DT, r'^\d{1,2}/\d{1,2}/\d{4}$') THEN SAFE_CAST(TRAN_LOCAL_DT AS DATE)
+    WHEN REGEXP_CONTAINS(TRAN_LOCAL_DT, r'^\d{1,2}-\d{1,2}-\d{4}$') THEN SAFE_CAST(REPLACE(TRAN_LOCAL_DT, '-', '/') AS DATE)
+    ELSE NULL
+  END AS TRAN_LOCAL_DT,
+  SAFE_CAST(REPLACE(TRAN_LOCAL_TM, '.', ':') AS TIME) AS TRAN_LOCAL_TM,
+  SAFE_CAST(CREDIT_CARD_ORG_ID AS INTEGER) AS CREDIT_CARD_ORG_ID,
+  PROD_NAME, -- Removed STRING alias
+  SAFE_CAST(TRAN_MRCH_TYPE AS INTEGER) AS TRAN_MRCH_TYPE,
+  TRAN_MRCH_ID,
+  TRAN_MRCH_NAME, -- Removed STRING alias
+  SAFE_CAST(TRAN_TYPE AS INTEGER) AS TRAN_TYPE,
+  SAFE_CAST(CREDIT_BAL_VAL AS INTEGER) AS CREDIT_BAL_VAL,
+  TRAN_SYSTM_ACT_VAL, -- Removed STRING alias
+  TRAN_FINAL_ACT_VAL,
+  TRAN_REQUST_TYP_ID,
+  TRAN_ACTION_DESC,
+    SAFE_CAST(TRAN_AMT AS INTEGER) AS TRAN_AMT,
+    SAFE_CAST(TRAN_DCML_NUM AS INTEGER) AS TRAN_DCML_NUM,
+    SAFE_CAST(TRAN_BILL_AMT AS INTEGER) AS TRAN_BILL_AMT,
+    SAFE_CAST(TRAN_BILL_CDE AS INTEGER) AS TRAN_BILL_CDE,
+    SAFE_CAST(ORG_CURR_DCML_NUM AS INTEGER) AS ORG_CURR_DCML_NUM,
+    SAFE_CAST(TRAN_CRNCY_CDE AS INTEGER) AS TRAN_CRNCY_CDE,
+    TRAN_ACTN_LNG_DESC,
+    SAFE_CAST(TRAN_ACTION_CDE AS INTEGER) AS TRAN_ACTION_CDE,
+    TRAN_POS_DATA_VAL,
+    SAFE_CAST(TRAN_POS_COND_CDE AS INTEGER) AS TRAN_POS_COND_CDE,
+    SAFE_CAST(CREDIT_LIMIT_AMT AS INTEGER) AS CREDIT_LIMIT_AMT,
+    ITRAN_CAT_CDE,
+    SAFE_CAST(TRAN_POS_ENT_CDE AS INTEGER) AS TRAN_POS_ENT_CDE,
+    ITRAN_TUN_REQ_ID,
+    TRAN_TKN_MSG,
+    TRAN_SUB_DATA,
+ CREDIT_ACC_NUM,
+  SAFE_CAST(CREDIT_CRD_ID AS INTEGER) AS CREDIT_CRD_ID,
+  SAFE_CAST(TRAN_PROC_CODE AS INTEGER) AS TRAN_PROC_CODE,
+FROM
+  pcm_stg_ds.pcm_stg_t;
+
+
+
+
+

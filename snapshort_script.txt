@@ -1,0 +1,86 @@
+bq mk snapshort_stg_ds
+
+bq mk --schema="D:\GCP\snapshort_metadata_31-01-25.txt" 
+snapshort_stg_ds.snapshort_stg_t
+
+bq load --source_format=CSV --skip_leading_ro
+ws=1 snapshort_stg_ds.snapshort_stg_t "D:\GCP\snapshot_data.xlsx _csv_31-01-25.csv"
+
+bq mk snapshort_hist_ds
+
+bq mk --schema="D:\GCP\hist_schema_31-01-25.txt" 
+snapshort_hist_ds.snapshort_hist_t
+
+
+C:\Users\Velam\AppData\Local\Google\Cloud SDK>bq query --use_legacy_sql=False 
+insert into snapshort_hist_ds.snapshort_hist_t select safe_cast(SNAPSHOTDATE as DATE),
+safe_cast(EMPLID as int64),EMPL_CLASS,safe_cast(POSITION_NBR as int64),POSITION_DESCRIPTION,DEPTID,
+DIRECOTRATE_DESCRIPTION,DEPARTMENT_DESCRIPTION,safe_cast(ACCT_CD as int64),LOCATION,
+safe_cast(ORG_LEVEL as int64),safe_cast(L1_EMPLID as int64),L1_NAME,safe_cast(L1_POSITION_NBR as int64) as l1_position,
+L1_POSITION_NAME,safe_cast(L2_EMPLID as int64),L2_NAME,safe_cast(L2_POSITION_NBR as int64),L2_POSITION_NAME,
+safe_cast(L3_EMPLID as int64),L3_NAME,safe_cast(L3_POSITION_NBR as int64),L3_POSITION_NAME,safe_cast(LEVEL as int64),
+safe_cast(HIRE_DATE as DATE),safe_cast(REHIRE_DT as DATE),safe_cast(SERVICE_DT as DATE),
+safe_cast(SERVICE_DATE as DATE) from snapshort_stg_ds.snapshort_stg_t
+Waiting on bqjob_r21fd754de48b455e_00000194bbeefa7b_1 ... (0s) Current status: DONE
+Number of affected rows: 100
+
+
+
+
+-- create table snapshort_audit_ds.snapshort_audit_t(
+--   dataset_name string,
+--   table_name string,
+--   date_audit date,
+--   total_record_count int64,
+--   audited_by string
+-- )
+
+-- create table snapshort_audit_ds.snapshort_audit_t(
+--   dataset_name string,
+--   table_name string,
+--   date_audit date,
+--   total_record_count int64,
+--   audited_by string
+-- )
+
+-- create table snapshort_hist_audit_ds.snapshort_hist_audit_t(
+--   dataset_name string,
+--   table_name string,
+--   date_audit date,
+--   total_record_count int64,
+--   audited_by string
+-- )
+
+-- insert into snapshort_audit_ds.snapshort_audit_t
+-- values ("snapshort_hist_ds","snapshort_hist_t","2025-01-31",100,"vinay")
+
+
+-- insert into snapshort_audit_ds.snapshort_audit_t
+-- select 'audit_hist_emp_dev' as dataset_name,
+-- 'history_audit_emp' as table_name,
+-- current_date() as date_audit,
+-- count(*) as total_record_count,
+-- "vinay" as audited_by
+-- from snapshort_hist_audit_ds.snapshort_hist_audit_t
+
+
+
+
+
+
+bq query --use_legacy_sql=false create view snapshot_view.snap_view
+ as select*from snapshort_hist_ds.snapshort_hist_t where DEPTID='Broadband'
+Waiting on bqjob_r65391a618a6022b_00000194bc183e9f_1 ... (0s) Current status: DONE
+Created project-bigquery-448808.snapshot_view.snap_view
+
+
+
+
+
+
+
+
+
+
+
+
