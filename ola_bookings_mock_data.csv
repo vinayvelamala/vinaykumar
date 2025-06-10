@@ -1,0 +1,101 @@
+Date,C_TAT,Time,Cancelled_Rides_by_Customer,Booking_ID,Cancelled_Rides_by_Driver,Booking_Status,Incomplete_Rides,Customer_ID,Incomplete_Rides_Reason,Vehicle_Type,Booking_Value,Pickup_Location,Payment_Method,Drop_Location,Ride_Distance,V_TAT,Driver_Ratings,Customer_Rating
+2024-06-04,3,07:35:00,Yes,BKG1000,Personal & Car related issue,Cancelled by Customer,No,CUST119,,Auto,885.17,Location8,Cash,Location17,5.25,17,4.0,4.7
+2024-06-02,14,18:18:00,Yes,BKG1001,,Cancelled by Customer,No,CUST122,Payment Failed,SUV,633.66,Location4,Credit Card,Location13,15.82,15,3.4,3.9
+2024-06-30,13,03:51:00,Yes,BKG1002,,Cancelled by Customer,Yes,CUST113,Payment Failed,SUV,603.85,Location9,UPI,Location12,13.59,1,4.3,4.0
+2024-06-29,10,01:45:00,No,BKG1003,Personal & Car related issue,Cancelled by Driver,No,CUST187,Payment Failed,Prime Sedan,485.11,Location3,Credit Card,Location15,3.56,9,4.4,4.3
+2024-06-29,12,12:02:00,Yes,BKG1004,Personal & Car related issue,Cancelled by Customer,Yes,CUST146,Customer No Show,SUV,397.63,Location1,Credit Card,Location12,24.95,20,2.0,3.7
+2024-06-23,7,09:35:00,No,BKG1005,Personal & Car related issue,Success,Yes,CUST150,,SUV,910.62,Location4,Credit Card,Location12,10.94,20,2.4,2.7
+2024-06-01,12,07:51:00,Yes,BKG1006,,Success,Yes,CUST157,Payment Failed,Mini,659.92,Location3,Cash,Location11,15.25,4,2.2,2.2
+2024-06-23,2,23:58:00,No,BKG1007,Personal & Car related issue,Cancelled by Customer,Yes,CUST180,,SUV,771.97,Location7,UPI,Location16,3.33,4,4.2,4.8
+2024-06-24,2,03:40:00,Yes,BKG1008,Personal & Car related issue,Cancelled by Driver,Yes,CUST126,Payment Failed,Mini,527.74,Location7,UPI,Location16,8.87,7,2.5,1.0
+2024-07-01,8,21:29:00,Yes,BKG1009,Traffic,Cancelled by Customer,Yes,CUST117,Location Not Found,SUV,875.82,Location1,Cash,Location19,16.04,4,4.7,4.4
+2024-06-23,11,19:18:00,Yes,BKG1010,,Success,No,CUST125,Location Not Found,Mini,744.4,Location4,UPI,Location17,19.41,6,3.0,3.6
+2024-06-14,7,15:11:00,No,BKG1011,Other,Cancelled by Driver,Yes,CUST105,Customer No Show,Auto,808.62,Location2,Credit Card,Location13,14.18,3,4.9,2.0
+2024-06-02,12,22:19:00,Yes,BKG1012,,Cancelled by Customer,Yes,CUST139,Location Not Found,SUV,416.78,Location1,Credit Card,Location19,10.99,6,3.7,1.3
+2024-06-18,5,09:04:00,No,BKG1013,,Cancelled by Driver,Yes,CUST142,Payment Failed,Prime Sedan,649.89,Location2,Cash,Location14,11.25,1,4.1,5.0
+2024-06-30,15,21:06:00,Yes,BKG1014,,Cancelled by Driver,No,CUST185,Customer No Show,Prime Sedan,479.87,Location3,Credit Card,Location18,8.49,12,2.1,1.3
+2024-06-04,15,13:53:00,No,BKG1015,Traffic,Cancelled by Customer,No,CUST161,Location Not Found,Mini,521.95,Location3,Credit Card,Location13,1.11,3,2.4,1.6
+2024-06-03,5,08:51:00,Yes,BKG1016,,Cancelled by Driver,No,CUST137,Location Not Found,SUV,450.17,Location6,Cash,Location13,17.5,17,4.5,3.3
+2024-06-19,10,14:23:00,Yes,BKG1017,Traffic,Cancelled by Driver,Yes,CUST118,,Prime Sedan,497.85,Location5,Cash,Location15,19.85,11,1.2,4.6
+2024-06-11,5,00:38:00,No,BKG1018,,Cancelled by Customer,No,CUST120,Customer No Show,Mini,892.11,Location2,UPI,Location11,21.39,4,2.6,4.2
+2024-07-01,5,20:49:00,Yes,BKG1019,Personal & Car related issue,Cancelled by Customer,Yes,CUST156,Payment Failed,Prime Sedan,427.69,Location6,UPI,Location14,4.13,18,3.4,3.0
+2024-06-23,13,14:57:00,Yes,BKG1020,Traffic,Success,Yes,CUST125,Customer No Show,Prime Sedan,266.54,Location2,UPI,Location20,17.84,17,3.4,3.2
+2024-06-08,9,12:30:00,No,BKG1021,Traffic,Cancelled by Customer,Yes,CUST181,,Auto,371.36,Location10,Cash,Location17,9.66,9,2.3,2.0
+2024-06-25,9,23:55:00,No,BKG1022,Traffic,Cancelled by Driver,Yes,CUST140,Location Not Found,Mini,143.4,Location9,UPI,Location19,18.62,1,3.4,4.1
+2024-06-02,15,02:45:00,Yes,BKG1023,Traffic,Cancelled by Customer,No,CUST163,,SUV,486.27,Location7,Credit Card,Location13,16.53,6,4.4,4.5
+2024-06-05,4,10:32:00,Yes,BKG1024,Personal & Car related issue,Cancelled by Driver,No,CUST166,Customer No Show,Mini,820.95,Location6,UPI,Location20,20.95,2,3.4,4.8
+2024-06-23,7,21:23:00,No,BKG1025,,Cancelled by Driver,No,CUST199,Location Not Found,Mini,353.74,Location3,Credit Card,Location12,17.22,15,3.7,3.1
+2024-06-23,9,18:43:00,No,BKG1026,Traffic,Success,No,CUST137,Payment Failed,SUV,484.87,Location6,Cash,Location18,4.46,9,1.2,4.0
+2024-06-17,10,20:28:00,Yes,BKG1027,Traffic,Cancelled by Driver,No,CUST128,,SUV,900.6,Location1,UPI,Location19,14.33,4,1.8,5.0
+2024-06-03,12,17:45:00,Yes,BKG1028,Other,Success,Yes,CUST135,Location Not Found,Prime Sedan,625.9,Location6,Credit Card,Location20,9.41,9,1.6,4.7
+2024-06-26,13,21:17:00,No,BKG1029,Traffic,Cancelled by Customer,Yes,CUST129,Customer No Show,Mini,615.81,Location7,Cash,Location17,3.28,3,4.4,3.3
+2024-06-27,12,10:59:00,No,BKG1030,Other,Cancelled by Driver,No,CUST152,Location Not Found,Prime Sedan,286.13,Location3,Credit Card,Location20,5.19,18,2.3,2.1
+2024-06-05,13,15:07:00,Yes,BKG1031,,Cancelled by Driver,No,CUST167,Payment Failed,SUV,432.02,Location10,Credit Card,Location12,10.93,16,3.0,3.1
+2024-06-05,14,04:19:00,No,BKG1032,Traffic,Success,Yes,CUST158,Customer No Show,Auto,151.26,Location5,Cash,Location14,23.82,20,1.7,1.1
+2024-06-12,6,03:35:00,No,BKG1033,Personal & Car related issue,Success,No,CUST109,Customer No Show,Prime Sedan,172.06,Location10,UPI,Location19,2.01,9,1.7,3.2
+2024-06-17,12,11:49:00,Yes,BKG1034,Traffic,Cancelled by Driver,Yes,CUST115,Location Not Found,SUV,309.08,Location7,Cash,Location13,13.81,15,2.9,2.6
+2024-06-06,7,03:46:00,No,BKG1035,Personal & Car related issue,Cancelled by Driver,Yes,CUST163,Payment Failed,Mini,644.31,Location2,Cash,Location11,10.58,5,3.9,1.5
+2024-06-14,6,15:00:00,Yes,BKG1036,Personal & Car related issue,Cancelled by Customer,No,CUST102,Payment Failed,SUV,909.28,Location10,UPI,Location17,2.42,19,3.1,4.3
+2024-06-15,4,05:38:00,Yes,BKG1037,,Cancelled by Customer,Yes,CUST181,Payment Failed,SUV,114.56,Location5,Credit Card,Location11,2.29,13,2.7,3.4
+2024-06-14,6,02:33:00,No,BKG1038,Traffic,Cancelled by Customer,No,CUST166,Location Not Found,SUV,839.85,Location4,UPI,Location15,12.72,13,2.4,2.4
+2024-06-03,6,02:49:00,Yes,BKG1039,Traffic,Cancelled by Customer,No,CUST163,Location Not Found,Mini,372.92,Location8,Cash,Location11,12.93,11,3.4,4.2
+2024-06-10,11,15:33:00,Yes,BKG1040,Other,Success,No,CUST115,Location Not Found,Prime Sedan,730.9,Location2,UPI,Location18,18.33,20,2.8,4.6
+2024-06-22,11,18:53:00,Yes,BKG1041,Traffic,Success,Yes,CUST141,Customer No Show,SUV,353.51,Location4,UPI,Location16,16.61,18,1.6,4.3
+2024-06-19,3,15:06:00,No,BKG1042,Personal & Car related issue,Success,No,CUST102,,SUV,106.64,Location6,UPI,Location19,23.89,1,1.5,4.6
+2024-06-25,6,22:37:00,Yes,BKG1043,Personal & Car related issue,Cancelled by Driver,No,CUST114,Customer No Show,Prime Sedan,819.92,Location10,Cash,Location20,11.21,13,2.2,4.7
+2024-06-27,4,03:28:00,Yes,BKG1044,Other,Cancelled by Customer,No,CUST174,Location Not Found,Mini,632.1,Location3,UPI,Location11,13.02,2,4.7,2.1
+2024-06-14,3,16:55:00,Yes,BKG1045,Other,Cancelled by Driver,No,CUST108,Customer No Show,Auto,663.82,Location3,UPI,Location18,17.53,3,4.9,3.3
+2024-06-18,5,10:05:00,Yes,BKG1046,Personal & Car related issue,Cancelled by Customer,Yes,CUST132,Payment Failed,Mini,952.47,Location1,Cash,Location20,3.85,18,3.9,1.4
+2024-06-26,11,01:12:00,No,BKG1047,Other,Cancelled by Customer,No,CUST164,Customer No Show,Prime Sedan,618.66,Location8,Cash,Location11,12.06,17,2.6,3.6
+2024-06-14,6,21:24:00,No,BKG1048,,Success,Yes,CUST116,Payment Failed,Auto,135.83,Location6,Cash,Location15,4.68,14,2.7,2.9
+2024-06-08,10,20:12:00,No,BKG1049,Traffic,Cancelled by Customer,No,CUST185,,Auto,820.72,Location9,UPI,Location11,6.5,10,2.7,4.7
+2024-06-23,12,20:14:00,No,BKG1050,,Cancelled by Customer,Yes,CUST194,Payment Failed,Mini,384.5,Location9,UPI,Location19,14.15,9,1.1,2.8
+2024-06-07,10,16:51:00,Yes,BKG1051,Personal & Car related issue,Cancelled by Customer,Yes,CUST123,,SUV,940.05,Location5,Credit Card,Location20,17.2,16,3.8,3.8
+2024-06-21,8,16:43:00,Yes,BKG1052,,Cancelled by Driver,Yes,CUST187,,Mini,895.08,Location6,UPI,Location20,21.91,5,1.6,2.3
+2024-06-03,4,22:05:00,No,BKG1053,Traffic,Success,Yes,CUST144,,Prime Sedan,182.74,Location5,Credit Card,Location16,12.16,5,2.1,1.8
+2024-06-15,15,14:16:00,Yes,BKG1054,Personal & Car related issue,Cancelled by Driver,Yes,CUST117,Customer No Show,SUV,444.45,Location1,Credit Card,Location17,20.63,17,2.5,2.0
+2024-06-29,4,03:24:00,Yes,BKG1055,Traffic,Cancelled by Customer,No,CUST170,Customer No Show,Mini,683.1,Location10,Credit Card,Location16,18.87,13,3.0,3.6
+2024-06-27,12,10:19:00,Yes,BKG1056,,Cancelled by Customer,No,CUST123,Payment Failed,Prime Sedan,857.27,Location4,Cash,Location11,10.93,11,2.6,3.1
+2024-07-01,11,18:20:00,No,BKG1057,Traffic,Cancelled by Customer,No,CUST120,Location Not Found,Prime Sedan,549.74,Location3,Cash,Location13,4.79,3,1.5,2.3
+2024-06-25,9,07:30:00,No,BKG1058,Traffic,Cancelled by Customer,Yes,CUST185,Location Not Found,Prime Sedan,556.4,Location2,Cash,Location20,12.11,14,2.0,1.4
+2024-06-12,4,12:51:00,No,BKG1059,,Cancelled by Customer,No,CUST141,,Mini,793.84,Location5,Cash,Location15,10.82,14,2.7,3.9
+2024-06-21,12,23:04:00,Yes,BKG1060,Personal & Car related issue,Success,Yes,CUST161,,SUV,818.16,Location2,Cash,Location15,8.92,15,2.0,4.6
+2024-06-22,9,11:14:00,No,BKG1061,Traffic,Success,No,CUST150,Payment Failed,SUV,525.16,Location4,Cash,Location14,13.91,16,2.1,4.3
+2024-06-13,7,16:16:00,No,BKG1062,Personal & Car related issue,Cancelled by Customer,No,CUST190,Payment Failed,Auto,581.46,Location6,UPI,Location13,4.35,11,4.2,3.3
+2024-06-25,6,08:39:00,Yes,BKG1063,Traffic,Cancelled by Driver,No,CUST182,Customer No Show,Prime Sedan,279.71,Location6,UPI,Location14,21.02,3,2.8,4.2
+2024-06-11,12,01:54:00,Yes,BKG1064,Other,Success,Yes,CUST186,Location Not Found,Auto,419.48,Location1,Cash,Location11,16.9,8,4.2,1.8
+2024-06-10,12,02:08:00,No,BKG1065,Traffic,Success,Yes,CUST158,Location Not Found,Prime Sedan,248.78,Location5,Credit Card,Location12,15.91,6,3.6,3.4
+2024-06-23,8,03:04:00,No,BKG1066,Traffic,Cancelled by Customer,Yes,CUST103,Customer No Show,Prime Sedan,124.8,Location4,Credit Card,Location19,22.69,19,2.2,1.7
+2024-06-03,3,13:17:00,Yes,BKG1067,,Cancelled by Customer,No,CUST101,Customer No Show,SUV,304.65,Location1,Credit Card,Location16,12.19,9,3.8,4.9
+2024-06-25,4,19:05:00,Yes,BKG1068,Traffic,Cancelled by Driver,No,CUST110,,SUV,104.7,Location1,Credit Card,Location20,5.27,14,3.2,4.0
+2024-06-19,14,19:58:00,Yes,BKG1069,Personal & Car related issue,Success,No,CUST124,Customer No Show,Auto,504.01,Location10,Cash,Location17,7.24,15,2.6,2.9
+2024-06-08,11,03:31:00,Yes,BKG1070,Personal & Car related issue,Cancelled by Customer,No,CUST123,Location Not Found,Prime Sedan,136.16,Location9,UPI,Location18,5.9,5,2.2,4.0
+2024-07-01,15,05:17:00,No,BKG1071,Traffic,Success,No,CUST196,,Auto,630.53,Location8,Cash,Location13,15.69,20,3.2,4.9
+2024-06-05,14,17:42:00,Yes,BKG1072,Traffic,Success,Yes,CUST111,Customer No Show,SUV,485.37,Location5,UPI,Location17,10.73,10,3.3,4.0
+2024-06-13,10,12:16:00,Yes,BKG1073,Personal & Car related issue,Cancelled by Driver,Yes,CUST106,Location Not Found,Prime Sedan,544.35,Location1,Credit Card,Location15,11.24,9,2.1,4.7
+2024-06-09,4,13:32:00,No,BKG1074,Personal & Car related issue,Cancelled by Customer,No,CUST112,,Prime Sedan,748.16,Location9,Cash,Location19,13.2,19,2.5,2.7
+2024-06-01,13,07:25:00,No,BKG1075,,Cancelled by Customer,No,CUST146,Location Not Found,Auto,270.72,Location9,Credit Card,Location15,20.19,6,3.1,2.3
+2024-06-21,8,02:02:00,Yes,BKG1076,Traffic,Cancelled by Customer,No,CUST118,Location Not Found,SUV,461.85,Location4,UPI,Location11,20.62,13,4.3,2.1
+2024-06-14,11,17:37:00,No,BKG1077,Traffic,Cancelled by Customer,No,CUST129,Customer No Show,Mini,418.75,Location1,Credit Card,Location16,4.5,9,2.3,2.5
+2024-06-26,13,09:00:00,Yes,BKG1078,Traffic,Cancelled by Customer,Yes,CUST137,Location Not Found,Mini,825.05,Location4,UPI,Location15,1.34,5,1.5,3.7
+2024-06-21,13,20:34:00,No,BKG1079,Traffic,Success,Yes,CUST155,,SUV,553.05,Location2,UPI,Location11,19.11,13,4.6,3.6
+2024-06-02,6,07:15:00,No,BKG1080,,Success,Yes,CUST193,Location Not Found,SUV,903.12,Location7,Credit Card,Location18,5.49,6,2.9,3.9
+2024-07-01,10,15:51:00,No,BKG1081,Other,Success,No,CUST154,Customer No Show,Prime Sedan,755.56,Location7,Cash,Location15,21.75,18,3.4,3.5
+2024-06-11,12,09:37:00,Yes,BKG1082,Other,Cancelled by Driver,Yes,CUST140,Location Not Found,Prime Sedan,971.91,Location4,UPI,Location18,19.71,20,1.3,2.0
+2024-06-05,7,09:13:00,No,BKG1083,Traffic,Success,No,CUST198,Payment Failed,Mini,118.5,Location4,UPI,Location20,15.36,2,3.5,1.9
+2024-06-17,6,16:45:00,No,BKG1084,,Cancelled by Driver,Yes,CUST162,Payment Failed,SUV,671.59,Location6,Cash,Location15,13.61,12,2.8,3.1
+2024-06-28,4,17:51:00,Yes,BKG1085,,Cancelled by Customer,Yes,CUST134,Payment Failed,Prime Sedan,231.25,Location5,Cash,Location17,19.01,16,1.3,4.8
+2024-06-19,5,14:41:00,Yes,BKG1086,Traffic,Cancelled by Driver,No,CUST147,Customer No Show,Prime Sedan,679.52,Location5,Credit Card,Location12,14.09,6,1.6,2.8
+2024-06-03,12,16:05:00,Yes,BKG1087,,Success,Yes,CUST152,Customer No Show,Prime Sedan,658.51,Location7,Cash,Location16,15.27,10,3.8,1.2
+2024-06-07,5,21:41:00,No,BKG1088,Personal & Car related issue,Cancelled by Driver,Yes,CUST126,Location Not Found,Prime Sedan,204.91,Location10,UPI,Location11,14.47,19,1.4,3.9
+2024-06-01,15,22:35:00,No,BKG1089,Other,Cancelled by Customer,Yes,CUST199,,Auto,308.04,Location10,Credit Card,Location16,13.82,18,1.4,3.8
+2024-06-23,15,10:42:00,No,BKG1090,Personal & Car related issue,Success,No,CUST153,Payment Failed,Prime Sedan,109.86,Location9,Cash,Location17,10.27,2,2.1,3.9
+2024-06-21,9,00:24:00,No,BKG1091,Other,Success,No,CUST142,Payment Failed,Auto,818.62,Location9,Cash,Location19,16.18,10,4.6,1.7
+2024-06-10,2,23:47:00,No,BKG1092,Traffic,Cancelled by Driver,Yes,CUST125,,Mini,862.65,Location6,Credit Card,Location12,6.21,8,3.4,1.4
+2024-06-09,14,11:42:00,Yes,BKG1093,,Success,No,CUST173,Payment Failed,Prime Sedan,482.22,Location9,Cash,Location16,10.89,17,3.7,4.3
+2024-06-16,7,13:38:00,Yes,BKG1094,Other,Cancelled by Customer,No,CUST141,Location Not Found,Mini,915.44,Location10,Credit Card,Location11,7.2,4,2.9,3.5
+2024-06-25,8,00:15:00,No,BKG1095,Personal & Car related issue,Cancelled by Customer,Yes,CUST131,Payment Failed,Auto,253.12,Location1,UPI,Location12,23.09,5,1.8,2.7
+2024-07-01,3,17:39:00,Yes,BKG1096,,Success,Yes,CUST144,Customer No Show,SUV,497.74,Location7,Credit Card,Location16,12.12,1,2.8,1.8
+2024-06-28,7,00:50:00,No,BKG1097,Traffic,Cancelled by Customer,No,CUST173,,SUV,278.03,Location9,Credit Card,Location16,4.77,15,1.8,2.9
+2024-06-26,8,02:47:00,Yes,BKG1098,,Success,Yes,CUST111,,Auto,615.29,Location3,Cash,Location18,14.88,17,4.7,2.5
+2024-06-10,8,12:54:00,No,BKG1099,Personal & Car related issue,Cancelled by Customer,Yes,CUST177,Customer No Show,Prime Sedan,343.98,Location6,Credit Card,Location17,6.49,14,2.6,4.4
