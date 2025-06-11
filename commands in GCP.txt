@@ -1,0 +1,106 @@
+commands 
+========
+ls= list, mb= make bucket, cp = copy, mv = move, rm = remove, rb = remove bucket, stat = Display Metadata
+
+
+Flags
+=======
+ -r = recursive, -f= force, -L = Log File for Operations, -b = bucket, -s [STORAGE-CLASS] = storage, ch = change
+
+GCS COMMANDS  in this commands u can use [gcloud storage] instead of [gsutil]
+ 
+Bucket Management
+====================
+List all buckets		gsutil ls
+
+Create a bucket			gsutil mb -l [LOCATION] gs://[BUCKET_NAME]
+
+Delete a bucket			gsutil rm -r gs://[BUCKET_NAME]
+
+View bucket details		gsutil ls -L -b gs://[BUCKET_NAME]
+
+Change bucket permissions	gsutil iam ch [ROLE]:[MEMBER] gs://[BUCKET_NAME]
+
+Remove bucket permissions	gsutil iam ch -d [ROLE]:[MEMBER] gs://[BUCKET_NAME]
+
+2. Object Management
+===========================
+List objects in a bucket	gsutil ls gs://[BUCKET_NAME]/
+
+Upload a file to a bucket	gsutil cp [LOCAL_FILE_PATH] gs://[BUCKET_NAME]/
+
+Download a file			gsutil cp gs://[BUCKET_NAME]/[OBJECT_NAME] [LOCAL_PATH]
+
+Copy an object			gsutil cp gs://[SOURCE_BUCKET]/[OBJECT_NAME] gs://[DEST_BUCKET]/[OBJECT_NAME]
+
+Delete an object		gsutil rm gs://[BUCKET_NAME]/[OBJECT_NAME]
+
+Rename/move an object		gsutil mv gs://[BUCKET_NAME]/[OLD_OBJECT_NAME] gs://[BUCKET_NAME]/[NEW_OBJECT_NAME]
+
+3. Folder Operations
+==========================
+Upload a folder			gsutil cp -r [LOCAL_FOLDER_PATH] gs://[BUCKET_NAME]/
+
+Download a folder		gsutil cp -r gs://[BUCKET_NAME]/[FOLDER_NAME] [LOCAL_PATH]
+
+Delete all objects in a folder	gsutil rm -r gs://[BUCKET_NAME]/[FOLDER_NAME]/
+
+Copy a folder between buckets	gsutil cp -r gs://[SOURCE_BUCKET]/[FOLDER_NAME] gs://[DEST_BUCKET]/[FOLDER_NAME]
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Big query allowed formats = CSV | NEWLINE_DELIMITED_JSON | DATASTORE_BACKUP | AVRO | PARQUET | ORC | THRIFT
+
+Flags
+=============
+--location --dataset, --format, --view, --project_id, --materialized_view, --dataset_id, --table_id, --schema, --start_index, --use_standard_sql, --use_legacy_sql
+
+DATASET MANAGMENT
+==========================
+Create a dataset		bq mk --dataset [PROJECT_ID]:[DATASET_NAME]
+
+List datasets			bq ls
+
+Delete a dataset		bq rm -r -f [PROJECT_ID]:[DATASET_NAME]
+
+Update dataset			bq update --description "New Description" [PROJECT_ID]:[DATASET_NAME]
+
+Get dataset details		bq show [PROJECT_ID]:[DATASET_NAME]
+
+QUERY
+==========================
+Run a query			bq query --use_legacy_sql=false '[SQL_QUERY]'
+
+Save query results locally	bq query --destination_table=[PROJECT_ID]:[DATASET].[table_name] '[SQL_QUERY]'
+
+Save results to GCS		bq extract --destination_format CSV [DATASET].[table_name] gs://[Bucket_name]/[FILE_NAME]
+
+Estimate query cost		bq query --dry_run --use_legacy_sql=false '[SQL_QUERY]'
+
+TABLE OPERATIONS
+=========================
+Create a table			bq mk --table [PROJECT_ID]:[DATASET_NAME].[table_name] [SCHEMA_FILE]
+
+List tables in a dataset	bq ls [PROJECT_ID]:[DATASET_NAME]
+
+Delete a table			bq rm -f [PROJECT_ID]:[DATASET_NAME].[table_name]
+
+Show table details		bq show [PROJECT_ID]:[DATASET_NAME].[table_name]
+
+Update table			bq update [PROJECT_ID]:[DATASET_NAME].[table_name]
+
+Export table to GCS		bq extract [PROJECT_ID]:[DATASET_NAME].[table_name] gs://[Bucket_name]/[FILE_NAME]
+
+Load data into a table		bq load --source_format=[FORMAT] [DATASET_NAME].[table_name] gs://[FILE_PATH] [SCHEMA_FILE]
+
+
+Schema Management
+========================
+View table schema		bq show --schema [PROJECT_ID]:[DATASET_NAME].[table_name]
+
+Update schema			bq update [PROJECT_ID]:[DATASET_NAME].[table_name] --schema [SCHEMA_FILE]
+
+Append schema field		bq update --schema_update_option=ALLOW_FIELD_ADDITION --source_format=NEWLINE_DELIMITED_JSON \
+
+Export table schema		bq show --format=prettyjson [PROJECT_ID]:[DATASET_NAME].[table_name] > schema.json

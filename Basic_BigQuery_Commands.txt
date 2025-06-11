@@ -1,0 +1,41 @@
+Basic BigQuery Commands
+
+List Datasets: Lists all the datasets in your project.
+bq ls
+
+Create a Dataset: Creates a new dataset.
+bq mk my_new_dataset
+
+Delete a Dataset: Deletes a specified dataset.
+bq rm -r -d my_dataset
+
+List Tables: Lists all the tables in a specified dataset.
+bq ls my_dataset
+
+Create a Table: Creates a new table within a dataset.
+bq mk --table my_dataset.my_table schema.json
+
+Delete a Table: Deletes a specified table.
+bq rm -t my_dataset.my_table
+
+Run a Query: Executes a SQL query on your BigQuery data.
+bq query 'SELECT * FROM `my_dataset.my_table` LIMIT 10'
+
+List Jobs: Lists all the jobs in a project.
+bq ls -j
+
+Get Job Status: Displays the status of a specific job.
+bq show -j job_id
+
+Cancel a Job: Cancels a running job.
+bq cancel job_id
+
+Managing Data
+Copy a Table: Copies a table to another table, either in the same dataset or a different one.
+bq cp my_dataset.my_table your_dataset.your_table
+
+Extract Data: Exports table data to an external destination.
+bq extract my_dataset.my_table gs://my_bucket/my_file.csv
+
+Load Data: Loads data from an external source to a BigQuery table.
+bq load --source_format=CSV my_dataset.my_table gs://my_bucket/my_file.csv schema.json
