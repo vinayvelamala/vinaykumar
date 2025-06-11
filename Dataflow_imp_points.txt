@@ -1,0 +1,21 @@
+tell me about Dataflow & apache Beam:-
+
+1. data processing tool for both Batch & NRT data
+2. dataflow is fully managed, Cluster less and cost effective
+3. Dataflow is auto scalling(vertical & Horizental), servers/worker nodes will spin/provision at the time job execution
+4. Dataflow is GCP componenet on top of apache beam.
+5. dataflow developed on top of Apache Beam, which is open source it's like Spark tool
+6.  Data Sourcing
+    Beam reads your data from a diverse set of supported sources, no matter if it’s on-prem or in the cloud.
+  
+   Data Processing
+   Beam executes your business logic for both batch and streaming use cases.
+
+   Data Writing
+   Beam writes the results of your data processing logic to the most popular data sinks in the industry.
+
+7. Beam supports write once run anywhere (Spark, dataflow, Flink, Beam, Samza....)
+8. Create Multi-language Pipelines (Java, python, SQL,Go ....)
+9. Beam executes large datasets in multile nodes(scalling) to complete less time
+10. Dataflow has 100+ predefined data pipeline template avaialble
+
