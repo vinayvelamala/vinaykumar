@@ -1,0 +1,966 @@
+Interview pattern for Every Company:
+=======================================
+
+1.Self Intro
+2.Project Pipeline
+3.Roles and responsibilities
+4.Daily activities
+
+above 4 questions for every company common
+---Please prepare above 4 points clearly 
+
+
+compulasary questions topic wise:
+--------------------------------
+gcs---1 or 2
+BQ----4 to 8
+DataProc----4 to 8
+Airflow-----2 to 4
+SQL----------3 to 5
+Python-----1 or 2 rare aduguthunnaru python
+
+
+GCS
+----
+1.Storage classes
+2.object lifecycle & Versioning
+3.realtime scenarios they will ask based on project pipeline and based on explanation
+
+BigQuery
+--------
+1.what slot mechanisim
+2.BQ architecture
+3.partioning & Clustering
+4.Auth and Materialized view
+5.Native and External and federate Queries
+6.BQ optimization Technik's
+7.Bq execution flow
+8.Timetravel and Snapshot uses
+9.realtime scenarios they will ask based on project pipeline and based on explanation
+
+
+DataProc:
+---------
+1.spark optimization Technik',what is Spark Session
+2.what is RDD and DataFrame and differences
+3.2TB data how to distribute
+4.Dataframe Transformations and actions
+5.Spark architecture
+6.Broadcost join 
+7.Narrow and Wide Transformation
+8.repartition and Collace
+9.reduce by and groupby
+10.create dataframe read and write csv,json,parquet files
+11.coding questions prepare avvali
+12.diff between dataproc and dataflow
+13.realtime scenarios they will ask based on project pipeline and based on explanation
+
+
+Airflow/Composer:
+---------------
+1.what is Airflow
+2.what is DAG
+3.all operators-python,bash,Branch,sensor,trigger,BQto GCS,GCSTOBQ,trigger,Postgress,triggerrun,gcs,http,https, rule etc
+4.what is XCOM and methods
+5.Airflow architecture.
+6.Sample Dag code like steps
+7.excutors-4 types
+8.realtime scenarios they will ask based on project pipeline and based on explanation
+
+Dataflow:
+--------
+1.what is Dataflow? diff between dataflow and Dataproc
+2.What is Pcollection?
+3.what is pardo and transformations?
+4.Write one sample apacheBeamline?
+5.realtime scenarios they will ask based on project pipeline and based on explanation
+
+
+sql
+====
+1.complusary question
+2.remove duplicates,2nd highest salary in each department.
+3.window functions,Excution flow ,Syntax should learn
+4.joins & watch sql interview questions in youtube
+
+
+python:
+-------
+1.diff list & tuple
+2.reverse string,list compherension programs.
+3.count ovels in string
+4.what is lambda function and write syntax,and square program
+5.decarators and generators
+
+
+
+========================================================================================================================================================
+
+Capgemini:
+=========
+1. 
+
+i/p :
+team_name	team_member
+Real Madrid	Ronaldo
+Real Madrid	Benzema
+Real Madrid	Ramos
+Barcelona	Messi
+Barcelona	Piquet
+Barcelona	Xavi
+
+o/p:
+team_name	members
+Real Madrid	Ronaldo, Benzema, Ramos
+Barcelona	Messi, Piquet, Xavi
+
+soln :
+select team_name, string_agg(team_member,', ') as members
+from   Database_test_IB1.teams 
+group by team_name;
+
+This function concatenates the values of a given column using a separator.
+The group by team_name clause creates groups of rows with the same value in team_name, then all the members of the same team are concatenated in the same string.
+
+2. 
+cust_id, invoice_date, invoice_no, purchase_amount
+1        2024-08-01    1000         600
+1        2024-08-04    1001         700
+2        2024-08-01    1002         500
+3        2024-09-02    1003         400
+
+cust_id, phone_no, address
+1        111111     bangalore
+2        222222     hyderabad
+
+o/p :
+
+month_year, count_with_1st_transaction, purchase_with_1st_transaction, count_with_non_1st_transaction, purchase_with_non_1st_transaction
+2024-08      2                         1100                            1                                700                          
+2024-09      1                         400                             0                                0                          
+
+
+Select
+to_char(invoice_date,'YYYY-MM') as month_year,
+count(case when rn=1 then 1 end) as count_with_1st_transaction,
+sum(case when rn=1 then purchase_amount end) as purchase_with_1st_transaction,
+count(case when rn!=1 then 1 end) as count_with_non_1st_transaction,
+sum(case when rn!=1 then purchase_amount end) as purchase_with_non_1st_transaction
+from
+(select *,row_number() over (partition by cust_id order by invoice_date asc) rn from table) x
+group by to_char(invoice_date,'YYYY-MM')
+order by month_year
+
+3. Join above table in python and write to bq table to get below result
+
+cust_id, purchase_amount, phone_no, address
+
+import pandas as pd
+
+df1 = pd.read_csv('file1.csv', header=None) 
+df2 = pd.read_csv('file2.csv', header=None)
+df_merge_col = pd.merge(df_row, df3, on='cust_id', how='inner')
+filtered_df = merged_df[['cust_id', 'purchase_amount', 'phone_no', 'address']]
+
+
+other things to remember :
+
+# Reading a CSV with no header, custom column names, and skipping the first two rows
+df = pd.read_csv('file.csv', header=None, names=['ID', 'Name', 'Age'], skiprows=2)
+
+# Reading specific columns and setting custom NA values
+df = pd.read_csv('file.csv', usecols=['Name', 'Salary'], na_values=['NA', '-'], encoding='utf-8')
+
+# Reading a CSV and parsing the 'Date' column as datetime
+df = pd.read_csv('file.csv', parse_dates=['Date'], date_parser=lambda x: pd.to_datetime(x, format='%d/%m/%Y'))
+
+# Fetch the first row from the CSV file
+df = pd.read_csv('file.csv', nrows=1)
+othet params - quotechar, skip_blank_lines, index_col, sep
+
+Theory questions :
+1. BQ :
+how to optimize bq query - partitioning and clustering
+patitioning - types of it - 3 types
+clustering - max xols = 4
+max partitions = 4k
+diff between view, mv and authorized view
+bq storage format - columnar and how it is processed?
+bq architecture
+slot in bq
+external table in bq
+after deletion, 7 time travel window 
+files to load/download supported
+bq command line, UI, using libraries - ways to create table
+view - 1 TB data, transfer data to physical table but if 4k is exceeded, - nothing can be done -> delete old data or change/remove partition
+column level access control in a table (data security)
+dml supported
+pricing -> computation and storage
+
+2. GCS
+
+4 classes of storage
+
+3. dataproc
+
+4. dataflow
+
+5. comnposer
+a. operators in it
+b. create sample dag using python operator or bash operator
+c. Explain the key components of Airflow.
+d. How does Airflow handle task dependencies?
+e. What is a DAG in Airflow?
+f. Discuss the role of the Airflow scheduler.
+g. How does Airflow support dynamic workflows?
+h. What are Airflow operators and how are they used?
+i. How can you monitor and troubleshoot workflows in Airflow?
+j. Explain the concept of XComs in Airflow.
+k. How can you scale Airflow for larger workflows?
+
+6. SQL :
+a. diff between rank, dense rank and row_number
+b. types of joins
+
+7. Clarity in what u tell abt the project
+
+8. Python programming question :
+
+a. Write a Python program to count the frequency of each element in a list.
+
+l=[1,1,2,3,1,4,5,2,4]
+
+def count_frequency(numbers):
+    frequency = {}
+    for num in numbers:
+        if num in frequency:
+            frequency[num] += 1
+        else:
+            frequency[num] = 1
+    return frequency
+nums = [1, 2, 3, 2, 1, 3, 2, 4, 5, 4]
+frequency_count = count_frequency(nums)
+print(frequency_count)
+{1: 2, 2: 3, 3: 2, 4: 2, 5: 1}
+
+sample website : https://medium.com/@shwetaka1988/python-coding-interview-questions-part-1-with-solutions-ce3156b17c50
+
+Pattern (30-45 mins interview):
+
+a. Intro        
+b. Python question
+c. sql question
+d. BQ questions
+e. questions on GCP services (dataproc, dataflow, gcs, composer etc. ) and about your project
+
+
+======================================================================================================================================================================
+
+
+Ramesh agilisium
+===============
+jan 23
+1. self intro? 
+2. did u worked on dataproc?
+3. what u will do in day2day activities? 
+4. what type of insights u provided?
+5. what are the problems u get in dag ?
+6. while working on dags what are all the observations u did?  
+7. If u take a pipeline what is ur source ?
+8. can we convert integer into string ? how?
+9. can u put empty string into null?
+
+ans: select case when emp_name = '' then 'null' else emp_name end as modified_empnames from table_name; 
+
+10. have u worked on string operations then extract only first 3 characters from a name column?
+ans: select substring(emp_name 3, 1) as third_char from table
+
+11.can u write the syntax of the window functions?
+ans: select column_name,(rank()  or dense_rank() or Row_number()) over(partition by col order by ) as variable from table_name;
+
+12. remove duplicates from a table ?
+ans: with remove_duplicates as
+(select * , row_number() over (partition by c1, c2, c3 order by c4 ) as row_num from table_name)
+delete from table_name where c4 in ( select c4 from remove_duplicates where row_num >1);
+
+13. How can u update a name in struct column of employee_table?
+
+update struct 
+set employee_name = 'ramesh' 
+where employeeid = 1;
+
+14. why do we use dataflow ?
+15. what is the p-collections ?
+16. what is pardo in dataflow ?
+17. How do u update schema in a bigquery of struct column?
+18. Have worked on merge statements in bigquery?
+19. what is authorized view and materialized view?
+20. what is partitiioning and clustering ?
+21. on which columns we can do partitioning and clustering?
+22. what is slot in bigquery?
+23. have u used unix commands?
+24. how u can add columns in table ?
+25. how can u calculate  no of slots u have used?
+26. query optimization techniques u follow?
+
+
+==================================================================================================================================================================
+
+PWC
+====
+
+com 		sales 		date         
+----		-----		----
+Cinthol 	200            2024-03-09    
+Dettol 		200            2024-03-09    
+LUX 		200            2024-03-09    
+Cinthol 	300            2024-03-10    
+Dettol		400            2024-03-10    
+LUX 		200            2024-03-10    
+Cinthol 	600            2024-03-11    
+Dettol 		800            2024-03-11    
+LUX 		600            2024-03-11
+
+
+adding the column Running total
+
+select com, sales, date, sum(sales) over(order by date, com) as running_total from table_name;
+
+
+src    dest 
+---    ----
+del    mum  
+mum    del  
+Hyd    Kol            
+Bang   Pune          
+Bang   Mum            
+Mum    Bang
+
+
+select distinct src, dest from table_name;
+
+
+select least(src, dest) as source, greatest( src, dest) as dest_loc
+from table_name;
+
+
+df1
+
+sale_date   fruit    num_sold
+ 
+18-11-2022  apple    10
+ 
+18-11-2022  oranges  8
+ 
+19-11-2022  apple    5
+ 
+19-11-2022  oranges  5
+ 
+20-11-2022  apple    7
+ 
+20-11-2022  oranges  10
+
+
+
+df2
+
+sale_date  diff
+ 
+18-11-2022  2
+ 
+19-11-2022  0
+ 
+20-11-2022  -3
+
+
+from pyspark.sql import SparkSession
+
+spark= SparkSession.builder.appNan
+
+
+
+
+df1 = spark.createDataFrame(df1, columns)
+df2 = df1.filter(col('fruit') != 'diff')\
+	.union(df1.filter(col('fruit') == 'diff').withColumn('fruit', lit(None)))
+
+df2.show()
+
+
+
+
+What is the difference between 
+spark.sql(f”””select * from table_name”””)       and
+spark.sql(f”select * from table_name”)
+
+
+
+=========================================================================================================================================================
+
+
+EY
+===
+airflow
+=======
+
+can we write sample in airflow
+
+import the airflow
+
+import gcs
+
+gobal variable declearations
+
+default arguments
+
+with dag(
+----
+--
+--
+--)
+
+task(  load data to bigquery)
+
+task1>>task2
+
+
+
+
+
+emp id empname dept_id sal 
+third highest sal in each depart
+
+with densrank_sal as
+(select emp id ,empname ,dept_id ,sal ,
+rank() over (partition by dept order by sal desc) as sal_rank
+from employee
+)
+select emp id empname dept_id sal 
+from rank_sal where sal_rank = 3;
+
+
+
+l = [1,3,5,8] 2,4,6,7
+find the missing numbers
+
+
+
+l = [1,3,5,8]
+
+full_set = set(range(min(1),max(1)+1))
+
+given_set= set(1)
+
+miss_num=sorted(full_set-given_set)
+
+print("miss_num:",miss_num)
+
+
+===================================================================================================
+
+Altemetrik
+========
+
+what you do in databricks?
+we will update the data by using pyspark and sql
+what around data we will receive?
+which format of data you will receive
+why json?
+it is iunderstanding purpose.
+
+if you receive large volumes of data how you will handle?
+
+you run 5 jobs and 6th file got failed 
+
+how much time it will take?
+
+you receive the pub/sub topic massages your gcp will
+
+production issues that you have faced?
+
+sprint duration
+
+explain 2 to 3 tasks what are the stories you have worked?
+
+what are the some activities you have done?
+
+what is you team structure?
+
+I need to make 1000 api calls?
+
+what kind of transformations you will use?
+
+if I remove you pipeline what would be happen?
+
+what is business impact?
+
+what contribution you have done in your project?
+
+what kind of documents taks you prepared?
+
+what are cost optimization techinics in gcp?
+
+3rd highest salary in pyspark?
+
+
+
+====================================================================================================================
+
+Company : Capgemini (L1)
+Interviewer : Aman
+1. Intro
+2. BQ Architecture
+3. Internal vs external tables
+4. Have you used dataflow, if yes have you used custom template or predefined template
+5. What did you write in custom templates
+6. write sql quer for second highest salary for each department - req columns - Id, Name, salary, dept_id, DeptName
+Table 1: Employees
+ID Name Salary DeptID
+1 John 70000 101
+2 Jane 85000 102
+3 Alice 60000 103
+4 Bob 75000 101
+5 Carol 92000 102
+Table 2: Departments
+DeptID DeptName
+101 HR
+102 Engineering
+103 Marketing
+7. convert the below list as the key pair values like the sample_output
+lst = ['a', 'a', 'a', 'b', 't', 'b', 'a', 'c', 'd', 'e', 'a']
+sample_output = {'a': 5, 'b': 2 etc}
+8. Types of storage classes
+9. What is materialized view
+10. What is action and transformation in pyspark
+
+===============================================================================================================================================
+
+ deloite (L1) 8TH JAN
+
+1. what was the role u played and what is the architecture of ur project? -- Introduction!!!
+2. what are materialized views?
+3. why we use dataproc instead of dataflow?
+4. In bigquery what is partitioning and clustering?
+5. two tables given and both are single column and give me final count of data ?
+6. how do u will fetch data from a csv file or json into pyspark ?
+7. how do u make a term or how do u use a sub-age or filter a column in pyspark?
+8. have u worked on agile methodology and do u know jira and all?
+interviewer = gith deloite (L2) Jan9
+1. Intro and pipeline
+2. Optimization techniques in bq
+3. View , authorised view, materialized view dff
+4. What is partitioning and clustering
+5. In airflow how can you handle task failures
+6.
+Table_A 1 1 1 1
+Table B 1 1 1 0
+Each join count....
+7.
+Table A Null Null
+Table B Null Null
+Each join count...
+8. I have two tasks a and b which run in parallel and task c should run after task a and b.
+Will task c run If either of the tasks fail?
+9. We have two tables employee and department find max salary department wise
+10. Find max salary from employee table using sql and pyspark
+11. Diff between reparation vs coalesce
+12. What is transformation in pyspark, when will execute the job
+13. How to grant permissions on views
+14. Write code for count no. of rows in a table using pyspark
+15. Find employees whose salary is greater than 25000 and display by using pyspark
+16. Write a query to find employees who have the same salary as their managers
+emp table:
+empl_id empl_first_nm empl_last_nm dept_id
+1024 Abhijit Mishra 20
+1025 Anurag Mishra 30
+1024 Mohit Kumar 20
+dept tab:
+dept_id Dept_nm dept_loc
+10 HR Pune
+20 IT Mumbai
+30 IT Hyderabad
+find duplicate emp_id in the table ?
+find max sal , min sal, salary diff ?
+read emp.csv file then find employees dept=20 by using PySpark?
+fetch records from the Dept table that have no matching employees in the Employee table?
+what is columnar storage ?
+
+===============================================================================================================================================================
+RAMESH - DELOITE(L1) JAN10
+Y DON'T WE DO THIS lets start very short introduction name , where ur from , total exp and relavent exp
+1. how many project u have worked on till now ?
+2. outoff those which are more challenging ?
+3. apache airflow is open source and in gcp what we use ?
+4. DATA WAREHOUSE IN GCP? what type of data we can store in that? and with examples ?
+5. In a single BigQuery Table how many columns we can use as a partition at any point of time ?
+6. if there are many duplicates in a bigquery table how can we remove them ?
+7. which one is more efficient groupby or distinct ?
+8. Apple is a palindrome or not use sql not python ?
+9. what is the prime number ?
+10. what is single linked list ? what is stack(LIFO) and queue(FIFO) ?
+11. what is Example of single linked list or double linked list ?
+Priyanka fractal (L1) jan10
+Intro
+1. what kind of data it is ?
+2. what are the stages in ur pipeline and where ur role comes ?
+3. what you do transformation otherthan the preliminary transformations ?
+4. what kind of transforms u did for business logic?
+5. which operator use in Airflow?
+6. what all different stages in ur airflow pipeline like diff tasks?
+7. those dax are parallel or sequential?
+8. How do u detect a file is landed on the gcs or presence of file in gcs ?
+9. How do u pass data from one task to another or one step to another ?
+10. Is there any configurations in your airflow pipeline?
+11. what is task instance?
+12. How task instance and xcorm is related?
+13. what is dummy operator?
+14. How do u set dependencies in multiple tasks?
+15. do u know about trigger rules?
+16. which class is used for creating operators?
+17. What is branch python operator?
+18. have u used gen2 cloud function?
+19. what is event arc?
+20. Scenario based when a file is landed into GCS then based on the file format the file need to transfer to bigquery raw. For this scenario which all services u use in gcp ?
+21. What kind of event is generated by the GCS with the cloud function should be subscribe to?
+22. Different storage classes in gcs ?
+23. which type of runtime u will use?
+24. How u can connect to BigQuery from gcs and how u can load file into it?
+25. What is columnar storage in BQ?
+26. Wt is partitioning & clustering?
+27. wt is the limit of clustering?
+28. which different types of columns data you can do partitioning?
+29. ABC are string columns and D is date column how do u partitioning in this step?
+30. what is left anti-join?
+31. there is a table stock_data and columns are stockname, stockprice and trade_date. can u write a query to get the 3 days moving average?
+32. Diff data types in python?
+33. Which are immutable in python?
+34. a = 'Hello', b = 'Hello' what is the output a is b and a==b ? wt's the difference in both?
+35. have u used all and any then wts the difference?
+36. if all is true true, then print('yes'), if any of true false , print('no')
+37. what is lambda?
+38. l = [1,2,3,5,8] write lambda function to cube the values?
+39. what is recursion?
+40. how can u use the principles of recursion to flatten the list?
+41. what is paralleldo in dataflow?
+42. what is dofun?
+43. how do u transfer a file from gcs to dataflow. how u read it and how do u define it?
+44. have u used version control tool? then what is ur remote repository?
+45. different stages in before commiting a code?
+46. what are merge conflicts?
+47. what is stash in git?
+48. what is repasing?
+
+
+=====================================================================================================================================
+Wipro data engineering questions asked in interview.
+1. why we need cloud service like azure, aws
+2. what is ETL
+3. OLAP vs OLTP
+4. what is data warehouse
+5. batch vs streaming processing
+6. what is NoSQL
+7. what is distributed computing
+8. stored procedure vs Functions
+9. can we use insert query inside SQL function
+10. types of join
+11. cross join vs self join
+12. what is window function and window function vs aggregated functions
+13. what are init scripts
+14. difference between job cluster and normal cluster
+15. difference between data lake and delta lake
+16. what is unity catlog
+17. Explain partitioning & clustering in Bigquery
+18. How will you decide which column to be used for partitioning & clustering
+19. Can we create index in Bigquery?
+20. Explain common Optimization techniques used in Pyspark jobs
+
+==========================================================================================================================================================
+
+deloite - (L1) jan16
+DO U HAVE PYSPARK EXPERIANCE
+1. CURRENT PROJECT WT UR DOING AND WHATS UR ROLES AND Responsibilities
+2. find the top 10 frequently occurring words in large dataset ? in python or pyspark?
+3. what is the lambda function and where we use?
+4. what is map function in python?
+5. can u rewrite the query using lambda in 2 question ?
+6. what is the udf in pyspark ?
+7. what is the limitations of using udf pyspark ?
+8. what are the optimizations can we perform on the this udf query ?
+Priyanka - wipro (L2) jan17
+1. what is ur source and destination of ur project?
+2. how ur data is loaded to bigquery?
+3. what are the transformations u did on top of the raw layer?
+4. have u worked on streaming type of data?
+5. in Airflow there are diff operators ? what are they?
+6. have u used any ETL tool otherthan GCP?
+7. Do u have idea about Facts and Dimension tables in ur database? how ur datamodel is designed?
+8. what r slowly changing Dimensions? have u used any type of SCD tool?
+9. give me example how do u using this type of scd?
+10. have u ever worked on scarcity pipeline ?
+
+================================================================================================================================
+Ramesh - tradence (L1) jan17
+intro
+1. What is the diff between dataflow and dataproc?
+2. can we use batch data in dataflow?
+3. what is the CAP theorem?
+4. what is the partitioning and clustering ? and what are the advantages?
+5. how the partitioning work and clustering work?
+6. how many columns we can apply clustering?
+7. can we apply the clustering without applying the partitioning on table ?
+8. how does apache spark ensure fault tolerance in distributed data processing? ans: rdd and dags
+9. scenario u need to transfer json file from gcs to bigquery in structured format say the approach using cloud dataflow(transformation) and sql?
+10. u r working with stock_prices dataset u need to calculate the avg stock price for month and year , find the highest avg month in a year?
+11. optimization techniques in bigquery?
+12. how will u design a bigquery to manage multiple groups to give multiple access?
+13. there is a large dataset how will u handle it ? ans: dataproc then y?
+14. delete the duplicates from bigquery and i need the latest records to be present?
+
+============================================================================================================================================
+ IBM(L2) jan20
+1. before gcp engineer what was ur role?
+2. How many active certifications u have on GCP?
+3. what was ur latest project and whats ur roles and responsibilities?
+4. did u have experience on dataflow or dataproc?
+5. scenario i have a csv file in that emp_table in that i had first_name, last_name, age , salary. u need to create 5th column Full_Name with pyspark?
+6. what is diff b/w WithColumnRename and WithColumnsRename ?
+7. whats the diff b/w RDD and DataFrame ?
+8. What are the diff operators u have used in Airflow?
+9. diff b/w celeryExecutor and Sequence Executor?
+10. How do we use Control Executor in Airflow?
+11. how do u transfer onprem database to google Bigquery, using cursor?
+12. what is the diff between normal views and materialized views?
+13. what are SCD's u used in ur project?
+
+=====================================================================================================================================================
+ (L1) JAN17
+ACCENTURE PONDE SANKET
+1. How does BigQuery process the query SELECT * FROM table in its architecture?
+2. What is the difference in cost between:
+- SELECT * FROM table
+- SELECT * FROM table WHERE date = '2025-01-17'
+when the table is partitioned, but data exists only for one partition?
+3. What are partitions and clustering in BigQuery?
+4. Why are partitions and clustering used, and how do they optimize query performance?
+5. How do you load data from one BigQuery table to another, making the destination table queryable?
+6. How do you handle dependencies between BigQuery tables using DAGs?
+7. What are the different storage classes in Google Cloud Storage (GCS)?
+8. Why would you use the Standard storage class instead of Archive?
+9. What is object versioning in GCS?
+10. If I delete a file with versioning enabled, is the file completely removed, or does it still incur storage costs?
+11. How can I create a dependency where *DAG A* triggers *DAG B* after it completes successfully?
+12. How can I implement DAG-to-DAG dependencies using **ExternalTaskSensor**?
+13. Are you writing DAG Python files manually, or are you using templates with variables like table names?
+14. How do you automate moving data files from GCS to BigQuery?
+15. After processing data in GCS, how do you move it to Archive storage?
+16. Given the following tables, what will be the output of different SQL joins?
+*Table1*
+| col1 |
+|------|
+| 3 |
+| 3 |
+| 2 |
+| 2 |
+| 1 |
+| NULL |
+*Table2*
+| col1 |
+|------|
+| 3 |
+| 3 |
+| 2 |
+| 1 |
+| 1 |
+| NULL |
+- *Inner join:* Count: 10
+- *Left join:* Count: 11
+- *Right join:* Count: 11
+- *Full outer join:* Count: 12
+17. How do you delete duplicate records from the same table?
+Example query:
+sql
+WITH cte AS (
+SELECT EmployeeName,
+ROW_NUMBER() OVER (PARTITION BY EmployeeName ORDER BY EmployeeName) AS row
+FROM employee
+)
+DELETE FROM employee WHERE EmployeeName IN (
+SELECT EmployeeName FROM cte WHERE row > 1
+);
+Alternative approach:
+sql
+CREATE OR REPLACE TABLE employee AS
+SELECT DISTINCT EmployeeName FROM employee;
+18. How do you find defaulter customers who have defaulted consecutively 3 times in the last year?
+Example table:
+| cust_name | expected_EMI | paid_EMI | MMYY |
+|-----------|--------------|----------|---------|
+| A | 2000 | | May-24 |
+| B | 10000 | 10000 | May-24 |
+| C | 5000 | 0 | May-24 |
+| A | 20000 | 0 | Apr-24 |
+| B | 10000 | 10000 | Apr-24 |
+| A | 20000 | 0 | Mar-24 |
+| B | 10000 | 10000 | Mar-24 |
+*Defaulter customers*: Customers who have not paid EMI for 3 consecutive months in the last year in SQL.
+Priyanka (L2)
+Capgemini
+1. i have a scenario i need 3day moving average of a sale data ?
+2. i have a column find out the top 3 highest sales transactions in a month?
+3. colname (variants)
+| type (varchar) | cost ( decimal ) |
+| a | 0.5 |
+| b | 0.75 |
+| c | 0.55 |
+| d | 0.44 |
+if i do sum(a, b , c) - 1.75 o/p - a,b,c
+sum(a,c,d) - 1.44 o/p - a,c,d
+* variables need to be dynamic
+4. airflow and composer?
+5. incase there is limitation in accessing the data, can connect with azure and composer ?
+6. have u heard about impersination ?
+7. scd type 1 and scd type 2?
+8. if we need to fetch data from a table but the data is huge, what we can do here instead of scaning direct table instead?
+
+
+======================================================================================================================================================
+
+Altimetric
+=============
+
+1. How does BigQuery process the query SELECT * FROM table in its architecture?  
+2. What is the difference in cost between:
+   - SELECT * FROM table
+   - SELECT * FROM table WHERE date = '2025-01-17'  
+   when the table is partitioned, but data exists only for one partition?  
+3. What are partitions and clustering in BigQuery?  
+4. Why are partitions and clustering used, and how do they optimize query performance?  
+5. How do you load data from one BigQuery table to another, making the destination table queryable?  
+6. How do you handle dependencies between BigQuery tables using DAGs?  
+7. What are the different storage classes in Google Cloud Storage (GCS)?  
+8. Why would you use the Standard storage class instead of Archive?  
+9. What is object versioning in GCS?  
+10. If I delete a file with versioning enabled, is the file completely removed, or does it still incur storage costs?  
+11. How can I create a dependency where *DAG A* triggers *DAG B* after it completes successfully?  
+12. How can I implement DAG-to-DAG dependencies using *ExternalTaskSensor*?  
+13. Are you writing DAG Python files manually, or are you using templates with variables like table names?  
+14. How do you automate moving data files from GCS to BigQuery?  
+15. After processing data in GCS, how do you move it to Archive storage?  
+16. Given the following tables, what will be the output of different SQL joins?  
+
+   *Table1*  
+   | col1 |  
+   |------|  
+   | 3    |  
+   | 3    |  
+   | 2    |  
+   | 2    |  
+   | 1    |  
+   | NULL |  
+
+   *Table2*  
+   | col1 |  
+   |------|  
+   | 3    |  
+   | 3    |  
+   | 2    |  
+   | 1    |  
+   | 1    |  
+   | NULL |  
+
+   - *Inner join:* Count: 10  
+   - *Left join:* Count: 11  
+   - *Right join:* Count: 11  
+   - *Full outer join:* Count: 12  
+
+17. How do you delete duplicate records from the same table?  
+   Example query:  
+   sql
+   WITH cte AS (
+       SELECT EmployeeName,
+              ROW_NUMBER() OVER (PARTITION BY EmployeeName ORDER BY EmployeeName) AS row
+       FROM employee
+   )
+   DELETE FROM employee WHERE EmployeeName IN (
+       SELECT EmployeeName FROM cte WHERE row > 1
+   );
+     
+   Alternative approach:  
+   sql
+   CREATE OR REPLACE TABLE employee AS
+   SELECT DISTINCT EmployeeName FROM employee;
+   
+
+18. How do you find defaulter customers who have defaulted consecutively 3 times in the last year?  
+   Example table:  
+   | cust_name | expected_EMI | paid_EMI | MMYY    |  
+   |-----------|--------------|----------|---------|  
+   | A         | 2000         |          | May-24  |  
+   | B         | 10000        | 10000    | May-24  |  
+   | C         | 5000         | 0        | May-24  |  
+   | A         | 20000        | 0        | Apr-24  |  
+   | B         | 10000        | 10000    | Apr-24  |  
+   | A         | 20000        | 0        | Mar-24  |  
+   | B         | 10000        | 10000    | Mar-24  |  
+
+
+====================================================================================================================================================
+
+Ramesh L1
+TECHM
+=======
+
+
+
+ Difference between data flow and data flog
+ Concept of windowing in data flow
+ Data pipe lines
+ Fault and data pipeline
+ Data frog
+ Defers from Hadoop
+ Schedule workflow in data flow
+ Difference between SQL and post grate
+ Types of indexed in postgrade
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Partitioning in postgrade
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Common Lamda function in python
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Using python print hello string reverse order
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Docker image stores in
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: What is name space
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Deployment status is in gcp
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Bucket life circle hooks
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Bucket virsion
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Setup bucket in multi
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Configure bucket virsion
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Command for list of objects
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Pea collection
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Architecture of data pipeline
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Sqwe data
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Schew data mean
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Different mechine type data Prok clusters
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Resize data Prok clusters
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Master node
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Key components
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Massage acknowledgement in pubsub
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Big query architecture
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Difference between big query and sql
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Handle schema changes in big query
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Federated quiry in big data
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Quiry for which person attending 3 years continuous
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Resilient
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Collation and partitioning
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Spack architecture
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Spark architecture
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Map and plate map difference
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Normalisation in sql
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Difference between row no and rank
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Truncate and delete difference in sql
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Jira explanation
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: How can decide story points
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Data prak in gcp
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Bucketing means in gcs
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Limitations in bucket
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Cloud run in gcp
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Data flow in gcp
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Streaming data
+[11:26 PM, 2/10/2025] ramesh12es9@gmail.com: Instead of row no ho can we use ran
+

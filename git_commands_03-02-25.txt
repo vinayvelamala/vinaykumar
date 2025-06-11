@@ -1,0 +1,206 @@
+Velam@VINAY MINGW64 ~ (feature/ProjectVK)
+$ cd vinayvelamala
+bash: cd: vinayvelamala: No such file or directory
+
+Velam@VINAY MINGW64 ~ (feature/ProjectVK)
+$ cd vinaykumar
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ ls
+README.md  snapshort_script.txt
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ ls
+README.md  snapshort_script.txt
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ touch file1.txt
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ ls
+README.md  file1.txt  snapshort_script.txt
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ nano file2.txt
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ cat file2.txt
+hi im snju
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ cat snapshort_script.txt
+
+bq mk snapshort_stg_ds
+
+bq mk --schema="D:\GCP\snapshort_metadata_31-01-25.txt"
+snapshort_stg_ds.snapshort_stg_t
+
+bq load --source_format=CSV --skip_leading_ro
+ws=1 snapshort_stg_ds.snapshort_stg_t "D:\GCP\snapshot_data.xlsx _csv_31-01-25.csv"
+
+bq mk snapshort_hist_ds
+
+bq mk --schema="D:\GCP\hist_schema_31-01-25.txt"
+snapshort_hist_ds.snapshort_hist_t
+
+
+C:\Users\Velam\AppData\Local\Google\Cloud SDK>bq query --use_legacy_sql=False
+insert into snapshort_hist_ds.snapshort_hist_t select safe_cast(SNAPSHOTDATE as DATE),
+safe_cast(EMPLID as int64),EMPL_CLASS,safe_cast(POSITION_NBR as int64),POSITION_DESCRIPTION,DEPTID,
+DIRECOTRATE_DESCRIPTION,DEPARTMENT_DESCRIPTION,safe_cast(ACCT_CD as int64),LOCATION,
+safe_cast(ORG_LEVEL as int64),safe_cast(L1_EMPLID as int64),L1_NAME,safe_cast(L1_POSITION_NBR as int64) as l1_position,
+L1_POSITION_NAME,safe_cast(L2_EMPLID as int64),L2_NAME,safe_cast(L2_POSITION_NBR as int64),L2_POSITION_NAME,
+safe_cast(L3_EMPLID as int64),L3_NAME,safe_cast(L3_POSITION_NBR as int64),L3_POSITION_NAME,safe_cast(LEVEL as int64),
+safe_cast(HIRE_DATE as DATE),safe_cast(REHIRE_DT as DATE),safe_cast(SERVICE_DT as DATE),
+safe_cast(SERVICE_DATE as DATE) from snapshort_stg_ds.snapshort_stg_t
+Waiting on bqjob_r21fd754de48b455e_00000194bbeefa7b_1 ... (0s) Current status: DONE
+Number of affected rows: 100
+
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ git status
+
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   snapshort_script.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+        file2.txt
+        pcm_script_03-02-25.txt
+
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ git add .
+warning: in the working copy of 'file2.txt', LF will be replaced by CRLF the next time Git touches it
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file1.txt
+        new file:   file2.txt
+        new file:   pcm_script_03-02-25.txt
+        new file:   snapshort_script.txt
+
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ git config --global user.email "vinaykumarvelamala2000@gmail.com
+> "
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ git commit -m "added_file"
+[main 9130ac6] added_file
+ 4 files changed, 177 insertions(+)
+ create mode 100644 file1.txt
+ create mode 100644 file2.txt
+ create mode 100644 pcm_script_03-02-25.txt
+ create mode 100644 snapshort_script.txt
+
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ git pull
+Already up to date.
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ git push -u origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 2.51 KiB | 321.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/vinayvelamala/vinaykumar.git
+   f7d1af5..9130ac6  main -> main
+branch 'main' set up to track 'origin/main'.
+
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ git rm file1.txt
+rm 'file1.txt'
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ git rm file2.txt
+rm 'file2.txt'
+
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ git commit -m "deleted_files"
+[main 129526d] deleted_files
+ 2 files changed, 2 deletions(-)
+ delete mode 100644 file1.txt
+ delete mode 100644 file2.txt
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ mv file1.txt demo_file.txt
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ ls
+README.md  demo_file.txt  pcm_script_03-02-25.txt  snapshort_script.txt
+
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ git branch practice_branch
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ ls
+README.md  demo_file.txt  pcm_script_03-02-25.txt  snapshort_script.txt
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ git branch --list
+* main
+  practice_branch
+
+
+Velam@VINAY MINGW64 ~/vinaykumar (main)
+$ git switch practice_branch
+Switched to branch 'practice_branch'
+
+Velam@VINAY MINGW64 ~/vinaykumar (practice_branch)
+$ git switch main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

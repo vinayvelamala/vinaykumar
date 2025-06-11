@@ -1,0 +1,16 @@
+
+JSON load command:
+------------------
+
+ndjson:
+------
+bq load --source_format=NEWLINE_DELIMITED_JSON --schema=C:\CDE\BigQuery\JSON_practice\transactions_schema.json CDE_B10.transactions C:\CDE\BigQuery\JSON_practice\transactions.ndjson
+
+avro
+----
+bq load --source_format=AVRO CDE_B10.transactions_avro C:\CDE\BigQuery\JSON_practice\transactions.avro
+
+
+
+
+
