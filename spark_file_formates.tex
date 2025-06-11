@@ -1,0 +1,54 @@
+
+from pyspark.sql import SparkSession
+spark = SparkSession.builder.appName("fileFormat").getOrCreate()
+
+csv_file = "file_path_csv"
+json_file = "file_path_json"
+parquet_file = "file_path_parquet"
+avro_file = "filepath_avro"
+text_file= "file_path_text"
+
+try:
+    df_csv = spark.read.csv("file_path.csv",header=True,inferschema=True)
+    df_csv.printSchema()
+    df_csv.show()
+except Exception as e:
+    print(f"error_reading_csv: {e}")
+    
+try:
+    df_json = spark.read.json("file_path")
+    df_json.printSchema()
+    df_json.show()
+except Exception as e:
+    print(f"error reading json : {e}")
+    
+try:
+    df_parquet = spark.read.parquet("file_path")
+    df_parquet.printSchema()
+    df_parquet.show()
+except Exception as e:
+    print(f"error reading parquet : {e}")
+    
+try:
+    df_avro = spark.read.format("avro").load("file_path")
+    df_avro.printSchema()
+    df_avro.show()
+except Exception as e:
+    print(f"error reading avro :{e}")
+    
+try:
+    rdd_text = spark.sparkContext.textFile("ile_path")
+    for line in rdd_text.take(5):
+        print(line)
+except Exception as e:
+    print(f"error reading text_file:{e}")
+
+spark.stop()
+
+
+    
+    
+
+
+
+
