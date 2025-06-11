@@ -1,0 +1,109 @@
+Basic List Operations
+How do you create a list in Python?
+
+How do you access the first element of a list?
+
+What is the purpose of the len() function for lists?
+
+How do you append an element to a list?
+
+How do you remove an element from a list?
+
+List Methods
+What does the list.extend() method do?
+
+How do you insert an element at a specific position in a list?
+
+What is the difference between list.remove() and list.pop()?
+
+How do you count the occurrences of an element in a list?
+
+How do you reverse the elements of a list?
+
+List Slicing
+How do you get the first three elements of a list?
+
+How do you remove the last element of a list using slicing?
+
+How do you copy a list using slicing?
+
+What is the result of list[1:4]?
+
+How do you get a sublist with a step value of 2?
+
+List Comprehensions
+What is a list comprehension?
+
+How do you use a list comprehension to create a list of squares?
+
+How do you filter elements in a list comprehension?
+
+Can you use multiple for-loops in a list comprehension?
+
+What is the purpose of the if condition in a list comprehension?
+
+List Functions
+How do you sort a list in ascending order?
+
+How do you get the maximum value in a list?
+
+How do you get the minimum value in a list?
+
+What does the sum() function do for a list?
+
+How do you get the index of an element in a list?
+
+Nested Lists
+What is a nested list?
+
+How do you access elements in a nested list?
+
+How do you iterate through a nested list?
+
+How do you flatten a nested list?
+
+What is the purpose of the itertools.chain() function for lists?
+
+List Operations
+How do you concatenate two lists?
+
+How do you multiply a list?
+
+How do you check if an element exists in a list?
+
+How do you clear all elements from a list?
+
+How do you copy a list using the copy() method?
+
+Advanced List Techniques
+How do you remove duplicates from a list?
+
+What is the purpose of the enumerate() function for lists?
+
+How do you merge two lists using the zip() function?
+
+How do you get the unique elements in a list?
+
+How do you use the map() function with a list?
+
+Miscellaneous
+How do you add elements of a list to a set?
+
+How do you check if two lists are equal?
+
+What is the difference between a list and a tuple?
+
+How do you sort a list of tuples?
+
+How do you randomly shuffle elements in a list?
+
+List Performance
+How do you measure the length of a list with len()?
+
+What is the time complexity of appending an element to a list?
+
+How do you optimize large list operations in Python?
+
+How do you convert a list to a byte array?
+
+What are some common list operations' time complexities?

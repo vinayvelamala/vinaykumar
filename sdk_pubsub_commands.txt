@@ -1,0 +1,175 @@
+gcloud Pub/Sub Commands
+--------------------------
+
+**1. Create a Topic**
+>>
+gcloud pubsub topics create [TOPIC_NAME]
+
+
+**Example:**
+>>
+gcloud pubsub topics create my-topic
+
+
+
+**2. List Topics**
+>>
+gcloud pubsub topics list
+
+
+**Example:**
+>>
+gcloud pubsub topics list
+
+
+
+**3. Publish a Message to a Topic**
+>>
+gcloud pubsub topics publish [TOPIC_NAME] --message "[MESSAGE]"
+
+
+**Example:**
+>>
+gcloud pubsub topics publish my-topic --message "Hello, Pub/Sub!"
+gcloud pubsub topics publish product_topic --message "Hello, Pub/Sub!"
+
+
+
+**4. Create a Subscription**
+>>
+gcloud pubsub subscriptions create [SUBSCRIPTION_NAME] --topic=[TOPIC_NAME]
+
+
+**Example:**
+>>
+gcloud pubsub subscriptions create my-subscription --topic=my-topic
+
+
+
+**5. Pull Messages from a Subscription**
+>>
+gcloud pubsub subscriptions pull [SUBSCRIPTION_NAME] --auto-ack
+
+
+**Example:**
+>>
+gcloud pubsub subscriptions pull my-subscription --auto-ack
+
+
+
+**6. List Subscriptions**
+>>
+gcloud pubsub subscriptions list
+
+
+**Example:**
+>>
+gcloud pubsub subscriptions list
+
+
+
+**7. Delete a Topic**
+>>
+gcloud pubsub topics delete [TOPIC_NAME]
+
+
+**Example:**
+>>
+gcloud pubsub topics delete my-topic
+
+
+
+**8. Delete a Subscription**
+>>
+gcloud pubsub subscriptions delete [SUBSCRIPTION_NAME]
+
+
+**Example:**
+>>
+gcloud pubsub subscriptions delete my-subscription
+
+
+
+**9. Get Topic Details**
+>>
+gcloud pubsub topics describe [TOPIC_NAME]
+
+
+**Example:**
+>>
+gcloud pubsub topics describe my-topic
+
+
+
+**10. Get Subscription Details**
+>>
+gcloud pubsub subscriptions describe [SUBSCRIPTION_NAME]
+
+
+**Example:**
+>>
+gcloud pubsub subscriptions describe my-subscription
+
+
+
+**11. Modify a Subscription’s Acknowledgment Deadline**
+>>
+gcloud pubsub subscriptions modify-ack-deadline [SUBSCRIPTION_NAME] \
+  --ack-deadline=[ACK_DEADLINE_SECONDS] --ack-ids=[ACK_ID]
+
+
+**Example:**
+>>
+gcloud pubsub subscriptions modify-ack-deadline my-subscription \
+  --ack-deadline=30 --ack-ids=YOUR_ACK_ID
+
+
+
+**12. Detach a Subscription from a Topic**
+>>
+gcloud pubsub subscriptions detach [SUBSCRIPTION_NAME]
+
+
+**Example:**
+>>
+gcloud pubsub subscriptions detach my-subscription
+
+
+
+**13. Test Permissions for a Topic**
+>>
+gcloud pubsub topics test-iam-permissions [TOPIC_NAME] --permissions=[PERMISSIONS]
+
+
+**Example:**
+>>
+gcloud pubsub topics test-iam-permissions my-topic \
+  --permissions=pubsub.topics.publish,pubsub.topics.get
+
+
+
+
+
+**14. Update a Subscription**
+>>
+gcloud pubsub subscriptions update [SUBSCRIPTION_NAME] --ack-deadline=[SECONDS]
+
+
+**Example:**
+>>
+gcloud pubsub subscriptions update my-subscription --ack-deadline=20
+
+**15. Simulate a Dead Letter Policy**
+To attach a dead-letter topic:
+>>
+gcloud pubsub subscriptions update [SUBSCRIPTION_NAME] \
+  --dead-letter-topic=[TOPIC_NAME] --max-delivery-attempts=[NUMBER]
+
+
+**Example:**
+>>
+gcloud pubsub subscriptions update my-subscription \
+  --dead-letter-topic=dead-letter-topic --max-delivery-attempts=5
+
+
+

@@ -1,0 +1,109 @@
+Basic String Operations
+How do you concatenate two strings in Python?
+
+What is the result of "Hello" + "World"?
+
+How do you repeat a string multiple times?
+
+What is the purpose of the len() function?
+
+How do you check if a string contains a specific substring?
+
+String Methods
+What does the str.upper() method do?
+
+How do you convert a string to lowercase?
+
+What is the difference between str.find() and str.index()?
+
+How do you replace a substring within a string?
+
+What is the purpose of the str.strip() method?
+
+String Slicing
+How do you get the first character of a string?
+
+How do you get the last character of a string?
+
+How do you extract a substring from a string?
+
+What is the result of "Hello"[1:4]?
+
+How do you reverse a string using slicing?
+
+String Formatting
+How do you format a string using the format() method?
+
+What is an f-string, and how do you use it?
+
+How do you include a variable in a string?
+
+What is the purpose of the % operator in string formatting?
+
+How do you align text to the right using string formatting?
+
+String Escaping
+How do you include a newline character in a string?
+
+How do you escape special characters in a string?
+
+What is the purpose of the r prefix in string literals?
+
+How do you include double quotes inside a string?
+
+How do you represent a tab character in a string?
+
+Regular Expressions
+How do you check if a string matches a regular expression?
+
+What is the purpose of the re.search() function?
+
+How do you find all occurrences of a pattern in a string?
+
+What does the re.sub() function do?
+
+How do you split a string using a regular expression?
+
+String Comparison
+How do you compare two strings for equality?
+
+What is the difference between == and is when comparing strings?
+
+How do you check if a string starts with a specific prefix?
+
+How do you check if a string ends with a specific suffix?
+
+How do you perform a case-insensitive string comparison?
+
+Advanced String Operations
+How do you convert a string to a list of characters?
+
+How do you join a list of strings into a single string?
+
+How do you count the occurrences of a character in a string?
+
+What is the purpose of the str.zfill() method?
+
+How do you center-align text in a string?
+
+Miscellaneous
+How do you remove whitespace from the beginning and end of a string?
+
+How do you check if a string contains only digits?
+
+What is the purpose of the str.partition() method?
+
+How do you check if a string is a valid identifier?
+
+How do you convert a string to an integer?
+
+String Encoding and Decoding
+How do you encode a string to bytes?
+
+How do you decode bytes to a string?
+
+What is the difference between UTF-8 and ASCII encoding?
+
+How do you handle Unicode characters in a string?
+
+How do you read a text file and store its contents as a string?
