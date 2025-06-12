@@ -1,0 +1,38 @@
+1) a) Write a function to find maximum of two numbers in Python
+   b) Use inbuilt function to find maximum of two numbers 
+   c) find maximum of two numbers using Lambda function
+
+2) list_1 = [1,2,3,4,5,6,7,8,9]
+
+ --> Generate a list of even number from above sample using lambda
+ --> Generate a list with square of each number in the above sample using lambda
+
+3) program to multiply all values in the list using lambda function and reduce()
+	list1 = [1, 2, 3]
+
+------------------------------------------
+File Operations: 
+
+1) Create a text file with below content and get count of word (the/THE)
+
+"India is the fastest-growing economy. India is looking for more investments around the globe. The whole world is looking at India as a great market. Most of the Indians can foresee the heights that India is capable of reaching."
+
+2) Write a function in Python to count uppercase character in the text file created above.
+
+-----------------------------------------------
+Pandas: 
+
+1) Find each company’s Higesht price car by creating dataframes -- use the data from Automobile_data.csv
+
+2) Read the data from CSV --> Data.csv
+Extract the columns Duration,Maxpulse
+move the data of above columns to new csv file
+
+3) 
+    'Name': ['Luke','Gina','Sam','Emma'],
+    'Status': ['Father', 'Mother', 'Son', 'Daughter'],
+    'Birthyear': [1976, 1984, 2013, 2016]
+
+Create a DF and add new column age to the above DF
+
+Filter the result age > 18

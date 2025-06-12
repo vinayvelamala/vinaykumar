@@ -1,0 +1,5 @@
+kumar
+appended line
+i am vinay
+Sanjana  rm,ram  yami
+ou can choose the mode that suits your needs depending on whether you want to append to or overwrite the file content while having the ability to read from the file.

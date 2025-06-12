@@ -1,0 +1,120 @@
+List Exercises:
+1) Print the second item in the fruits list.
+fruits = ["apple", "banana", "cherry"]
+
+2)Change the value from "apple" to "kiwi", in the fruits list.
+fruits = ["apple", "banana", "cherry"]
+
+3)Use the append method to add "orange" to the fruits list.
+fruits = ["apple", "banana", "cherry"]
+
+4)Use the insert method to add "lemon" as the second item in the fruits list.
+fruits = ["apple", "banana", "cherry"]
+
+5)Use the remove method to remove "banana" from the fruits list.
+fruits = ["apple", "banana", "cherry"]
+
+6)Use negative indexing to print the last item in the list.
+fruits = ["apple", "banana", "cherry"]
+
+7)Use a range of indexes to print the third, fourth, and fifth item in the list.
+fruits = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+
+8)Use the correct syntax to print the number of items in the list.
+fruits = ["apple", "banana", "cherry"]
+
+9) List=[0,1,0,2,0,3] get output as [1,2,3,0,0,0]
+10) Remove duplicates fhrom list[1,2,3,4,1,2,3]
+11) A = ['ABC',[],'XYZ',[],'abc',[]] --> program to get output ['ABC','XYZ','abc']
+
+12)x=[20,50,10,5,99,39,11,6] --> Ascending and Descending 
+
+don't use sort method, sort the above list
+
+use the below concepts on List:
+
+remove --> List 
+append --> List
+operator <
+for loop 
+if condition class
+
+
+13) Python program to find largest number and second largest number in a list
+
+list1 = [10, 20, 20, 4, 45, 45, 45, 99, 99]
+
+14) Count occurance of an element in the list ex:8
+
+lst = [8, 6, 8, 10, 8, 20, 10, 8, 8]
+
+15) Concatenate two lists index-wise
+
+list1 = ["M", "na", "i", "Ke"]
+list2 = ["y", "me", "s", "lly"]
+
+
+Dictionary Exercise:
+1)Use the get method to print the value of the "model" key of the car dictionary.
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+2)Change the "year" value from 1964 to 2020.
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+3)Add the key/value pair "color" : "red" to the car dictionary.
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+4)Use the pop method to remove "model" from the car dictionary.
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+5)Use the clear method to empty the car dictionary.
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+6) What is the output for the below
+dictt = {i : i+2 for i in range(10)}  
+7)print sum of all values from a dict
+dict = {'a': 100, 'b': 200, 'c': 300}
+8) dict={1:2,"adic":{"key":"val"},"role":"sse"} --> program to get output adic
+
+9) Convert two lists into a dictionary
+
+keys = ['Ten', 'Twenty', 'Thirty']
+values = [10, 20, 30]
+
+Strings Exercise:
+1)Write a program to find all occurrences of “USA” in a given string 
+ignoring the case.
+
+2)Calculate the sum and average of the digits present in a string.
+str="hi156hello890"
+
+3)Write a program to count occurrences of Characters within a string
+str1 = "Apple"
+
+4)Reverse a given string -- using slicing
+Str1=Apple
+
+5)Split a string on hyphens
+str1 = Emma-is-a-data-scientist
+
+6)Count all chars, digits and symbols in a string
+str1 = "P@#yn26at^&i5ve"

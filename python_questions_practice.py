@@ -3,10 +3,13 @@
 # like append,remove,modif
 # 2.it is defined using square brackets [] 
 # tuple 
-# 1.it is immutable once it is created you can cannot be chane its elements.
+# 1.it is immutable once it is created you can cannot be change its elements.
 # 2. it is defined using paraentheses ()
 
+
+
 '''2. What are Python decorators, and how do you use them?'''
+'''is modify the other fun but not it orginal code '''
 # def decorator(func):
 #     def wrapper():
 #         print("before func")
@@ -21,18 +24,56 @@
 ''' 3. How would you find the most frequent element in a list?'''
 # from collections import counter
 
-lst = [1,2,3,2,4,5,2,3,1,1,2,1,2]
+lst = [2,3,1,1,4,5,8,2,1,2,1,2]
+# d = []
+# for i in lst:
+#     if lst.count(i)> 1 and i not in d:
+#         d.append(i)
+# print(d)
+
+# d = []
+# for i in lst:
+#     if lst.count(i) > 1 and i not in d:
+#         d.append(i)
+# print(d)
+
+# l = [1,2,3,2,4,2,5,6,2,5,2,2,5,63]
+# d = []
+# for i in l:
+#     if l.count(i) > 1 and i not in d:
+#         d.append(i)
+# print(d)
+
+# d = []
+# for i in lst:
+#     if lst.count(i) >1 and i not in d:
+#         d.append(i)
+# print(d)
+
+
+
+
+
 # counter1 = counter(lst)
 # most_common = counter.most_common(1)[0][0]
 # print(most_common)
+
+# m = counter.m(1)[0][0]
+# print(m)
 
 
 # common_ele = {}
 # for i in lst:
 #     common_ele[i] = common_ele.get(i, 0) +1
-
 # most_fre_ele = max(common_ele, key=common_ele.get)
 # print(most_fre_ele)
+
+# c ={}
+# for i in lst:
+#     c[i] = c.get(i,0)+1
+# m = max(c,key=c.get)
+# print(m)
+
 
 '''4. Explain the difference between Python lists and dictionaries. When would you use each?'''
 # list: an ordered collection of elements,accessed by index.usded when 
@@ -61,15 +102,82 @@ lst = [1,2,3,2,4,5,2,3,1,1,2,1,2]
 #     print("Execution completed.")
 
 
+# try:
+#     num = int(input("enter a number:"))
+#     den = int(input("enter a num:"))
+#     result = num / den
+  
+# except ZeroDivisionError:
+#     print("cannot divide by zero")
+# else:
+#     print(f"the result of division is : {result}")
+# finally:
+#     print("execution complted")    
+
 
 ''' 6. Describe the use of list comprehensions in Python and provide an example.'''
 # squre=[]
 # for i in range(10):
 #     squre.append(i ** 2)
-#     print(squre)
+# print(squre)
+
+# s = []
+# for i in range(20):
+#     s.append(i ** 2)
+# print(s)
+
+# s = []
+# for i in range(10):
+#     s.append(i ** 2)
+# print(s)
+
+# s = []
+# for i in range(20):
+#     s.append(i ** 2)
+# print(s)
+
+
+
 
 # squres = [x ** 2 for x in range(10)]
 # print(squres)
+
+# s = [i ** 2 for i in range(10)]
+# print(s)
+
+# s = [x ** 2 for x in range(10)]
+# print(s)
+
+" PRINT EVEN NUMBERS: " 
+
+# s = []
+# for i in range(30):
+#     s.append(i * 2)
+# print(s)
+
+
+" PRINT NUMERS 50"
+# n = []
+# for i in range(50):
+#     n.append(i)
+# print(n)
+
+
+" odd number "
+# o = []
+# for i in range(50):
+#     val = (i * 3)
+#     if val % 2 != 0 :
+#       o.append(val)
+# print(o)
+
+# for i in range(1,50):
+#     if i % 2 != 0:
+#       print(i)
+
+# for i in range (1,50,2):
+#     print(i)
+
 
 '''7. What is the difference between shallow copy and deep copy in Python?'''
 
@@ -98,10 +206,25 @@ lst = [1,2,3,2,4,5,2,3,1,1,2,1,2]
 
 
 ''' 8. Describe how you would remove duplicates from a list.'''
-# l = [1,2,2,3,4,4,2,1,2]
+l = [1,2,2,3,4,4,2,1,2]
+
+# u =[]
+# for i in l:
+#     if i not in u:
+#         u.append(i)
+# print(u)
+
 # u = list(set(l))
 # print(u)
 
+# s = list(set(l))
+# print(s)
+
+# d = list(set(l))
+# print(d)
+
+# d = set(l)
+# print(d)
 
 ''' 9. How do you read and write files in Python?'''
 # file = open('example.txt', 'r')
@@ -119,6 +242,10 @@ lst = [1,2,3,2,4,5,2,3,1,1,2,1,2]
 # file.close()
 
 
+# file = open("D:\Douctments\python_questions_on_Dictionary_.txt",'r')
+# for line in file:
+#     print(line)
+
 
 ''' 10. Describe how you would sort a list of dictionaries by a specific key.'''
 # list = [{'name':'vinay','age':'25',},{'name':'sanjana','age':'24'}]
@@ -126,15 +253,36 @@ lst = [1,2,3,2,4,5,2,3,1,1,2,1,2]
 # print(sort_list)
 
 ''' 11. Explain how to find the second largest element in a list.'''
-# list = [1,2,3,4,5,6,5]
+l = [1,2,3,4,5,6,5]
 # sort_list = sorted(set(list))
 # secound_high =sort_list[-2]
 # print(secound_high) 
+
+# s = sorted(set(l))
+# h = s[-2]
+# print(h)
+
 
 # list  = [10,20,30,10,50,40,60]
 # sort = sorted(set(list))
 # secound_high = sort[-2]
 # print(secound_high)
+
+# for i in range(len(l)):
+#     for j in range(len(l)-i-1):
+#         if l[j] > l[j+1]:
+#             l[j],l[j+1] = l[j+1],l[j]
+# l.sortf()
+# print(l)
+# print(f"secound hihest num is : {l[-2]}")
+# print(f"fourth hihest num is : {l[-4]}")
+            
+
+# for i in range(len(l)):
+#     for j in range(len(l)-i-1):
+#         if l[j] > l[j+1]:
+#             l[j],l[j+1] = l[j+1],l[j]
+# print(l[-2])
 
 ''' 12. How do you merge two sorted lists in Python?'''
 # l1 =[1,2,3,4,5]
@@ -143,10 +291,22 @@ lst = [1,2,3,2,4,5,2,3,1,1,2,1,2]
 # print(merge)
 
 '''13. What is a generator in Python, and how does it differ from a list?'''
-
+# l = [1,2,3,5,2,4,62,2]
+# l1 = [1,2,3,2,3,5,6,2,4,2]
+# add = sorted(l + l1)
+# print(add)
 
 # 14. How do you read and write data from a CSV file using Pandas?
+
+import pandas as pd 
+# df = pd.read_csv('D:\Sample_Datasets\Cars_data.csv')
+# print(df)
+
+
+
 # 15. Explain how to handle missing data in a Pandas DataFrame.
+# print(df.isnull())
+
 # 16. Describe the process of merging/joining two DataFrames in Pandas.
 # 17. How do you use the groupby function in Pandas? Provide an example.
 # 18. Explain how to use NumPy for numerical operations in Python.
@@ -188,10 +348,57 @@ lst = [1,2,3,2,4,5,2,3,1,1,2,1,2]
 # for i in range(1,11):
 #     if i % 2 == 0:
 #         print("it is even no:",i)
+
+
+# l = int(input("enter a num: "))
+# for i in range(l):
+#     if i % 2 == 0:
+#         print(f"it is even num: {i}")
+#     else:
+#         print(f"it is odd num: {i}")
+
+
+# n = int (input('enter a anum: '))
+# for i in range(n):
+#     if i%2 == 0:
+#         print(f"it is even num:{i}")
+#     else:
+#         print(f" it is odd num: {i}")
+
+
+# n = int (input('enter a anum: '))
+# if n % 2 == 0:
+#     print(f"it is even num: {n}")
+# else:
+#     print(f"it is odd num: {n}")
+
+# l = 3
+# if l % 2 == 0:
+#     print(f"it is an even num: {l}")
+# else:
+#     print(f"it is an odd num: {l}")
+
+
+# for i in range(11):
+#     if i % 2 == 0:
+#       print(f"even num:{i}")
+
+# for j in range(11):
+#    if j % 2 != 0:
+#       print(j)
+
         
 
 '''48. Remove duplicates from the list [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].'''
-l = [1, 2, 3, 4, 5, 6,7,5, 7, 8, 9, 10]
+# l = [1, 2, 3, 4, 5, 6,7,5, 7, 8, 9, 10]
+# l1=[]
+# for i in l:
+#     if i not in l1:
+#         l1.append(i)
+# print(l)
+# print(l1)
+
+
 # l = list(set(l))
 # print(l)
 
@@ -202,9 +409,15 @@ l = [1, 2, 3, 4, 5, 6,7,5, 7, 8, 9, 10]
 # print(unique_l)
         
 
-# 49. Reverse the string "VAARAHI".
+'''49. Reverse the string "VAARAHI".'''
 # n = "VAARAHI"
 # print(n[::-1])
+
+n = "VINAY KUMAR"
+r =""
+for i in n:
+    r=i+r
+print(r)
 
 ''' 50. Find the word count in the sentence "I love my country".'''
 # c = "I love my country"
@@ -285,456 +498,75 @@ and reverses the order of words. Example: "Python is amazing" -> "amazing is Pyt
 # print(a)
 
 ''' 61. Use a lambda function to create a list of squares of numbers from 1 to 5.'''
-# lst = [1,2,3,4,5]
-# s = list(map(lambda x : x*x ,lst))
+# x = [i**2 for i in range(1,6)]
+# print(x)
+
+# s =[]
+# for i in range(1,11):
+#     s.append(i**2)
 # print(s)
 
-# squres = list(map(lambda x: x** 2,lst))
-# print(squres)
+'''62. Write a Python function that takes a list as input and returns a new list containing only the unique elements.'''
+# l = int(input("enter a list:"))
 
-
-'''62. Write a Python function that takes a list as input and returns a new 
-list containing only the unique elements.'''
-def unique_e(input_l):
-    return list(set(input_l))
-
-input_v = input("Enter list value: ")
-input_l = list(map(int, input_v.split()))
-result = unique_e(input_l)
-print(result)
-
-# def unique_v(a):
-#     b= set(a)
-#     c = list(b)
-#     return c
-# a = [1,2,3,4,5,6,2,1,4,2]
-# r = unique_v(a)
-# print(r)
-
-# def unique_e(input_l):
-#     unique_set = set(input_l)
-#     unique_l = list(unique_set)
-#     return unique_l
-# input_l = [1,2,2,3,4,5,6,2,1,2,3]
-# result = unique_e(input_l)
-# print(result)
-
-'''63. Write a Python function to find the largest element in a list 
-without using built-in functions.'''
-# def large_element(lst):
-#     if not lst:
-#         return None
-#     largest = lst[0]
-#     for element in lst:
-#         if element > largest:
-#             largest = element
-#     return largest
-# num = [3,5,2,9,1]
-# l =  large_element(num)
-# print("large element",l)
-
-# def large_element(lst):
-#     if not lst:
-#         return None
-#     return max(lst)
-# num = [10,20,30,96,45,20]
-# l = large_element(num)
-# print("the large element is:",l)
-
-
-'''64. Write a Python function to remove duplicates from a list
- while maintaining the order of elements.'''
-# def remove_duplicates(lst):
-#     return list(dict.fromkeys(lst))
-# num = [1,2,34,1,2,3,14,2,3,6]
-# uniq_no = remove_duplicates(num)
-# print("after remove dupilcates:",uniq_no)
-
-# def remove_duplicate(lst):
-#     s = set()
-#     r = []
-#     for i in lst:
-#         if i not in s:
-#             r.append(i)
-#             s.add(i)
-#     return r
-# num = [1,2,3,4,5,6,12,2,1,3,4]
-# uniq_no = remove_duplicate(num)
-# print('after remove duplicates:',uniq_no )
-
-'''65. Write a Python function to find the missing number in a sequence 
-of integers from 1 to n. Example: numbers = [1, 2, 4, 5].'''
-# def find_missing_no(num,n):
-#     total_sum = n*(n+1) // 2
-#     sum1 = sum(num)
-#     missing_no = total_sum - sum1
-#     return missing_no
-# num = [1,2,4,5]
-# n = 5
-# missing_no = find_missing_no(num,n)
-# print("missing no is:",missing_no)
-
-# def find(num):
-#   n=len(num)+1
-#   for i in range(1,n+1):
-#     if i not in num:
-#       return i
-# num=[1,2,4,5]
-# t=find(num)
-# print("missing num: ",t)
-
-
-''' 66. Write a Python function that takes a number as input and returns
- True if it's a prime number, otherwise False.'''
-# num = int(input("enter a number: "))
-# if num > 1:
-#     for i in range(2,num):
-#         if (num % i) == 0:
-#             print("it is not a prime no:",num)
-#             break
-#     else:
-#         print("it is prime no: ",num)
-# else:
-#     print("it is not a prime: ",num)
-        
-
-# def is_prime(num):
-#     if num <= 1:
-#         return False
-#     for i in range(2, int(num**0.5) + 1):
-#         if num % i == 0:
-#             return False
-#     return True
-# num = int(input("enter a no:"))
-# if is_prime(num):
-#     print(f"{num} is prime no.")
-# else:
-#     print(f"{num} is not a prime no")
-
-
-# def is_prime(num):
-#     if num <= 1:
-#         return False
-#     for i in range(2,num):
-#         if num % i == 0:
-#             return False
-#     return True
-# num = int(input("enter a no:"))
-# if is_prime(num):
-#     print("is prime no.",num)
-# else:
-#     print("is not a prime no",num)
-
-'''67. Write a Python program to capitalize the first letter of a string.''' 
-# def capital_first_letter(s):
-#     return s[0].upper() + s[1:]
-# string = "vinaykumar"
-# c_s = capital_first_letter(string)
-# print(c_s)
-
-# s = "sanjana"
-# r = s[0].upper() + s[1:]
-# print(r)
-
-# def capital_first_letter(s):
-#     return s[0].upper() + s[1:]
-# s = "yamini"
-# c_s = capital_first_letter(s)
-# print(c_s)
-
-'''68. Write a Python function that accepts keyword arguments and prints them.''' 
-
-# def s (**kwargs):
-#     for key,value in kwargs.items():
-#         print(f"{key}:{value}")
-# s(name = "vinay",Age = 25,city = "hyd")
-
-
-'''69. Write a Python program that uses a global variable within a function.'''
-
-# c = 10
-# def dec():
-#   global c 
-#   c-=1
-# print(c)
-# dec()
-# print(c)
-
-
-'''70. How do you find the length of a list? Example: [10, 20, 30, 40, 50].'''
-# l = [10, 20, 30, 40, 50]
-# print(len(l))
-
-# l = [10, 20, 30, 40, 50]
-# s = len(l)
-# print("the lenght of list is: ",s)
-
-
-'''71. How do you swap the first and last elements of a 
-list? Example: [1, 2, 3] -> [3, 2, 1].'''
-
-l = [1,2,3]
-# temp = l[0]
-# l[0] = l[-1]
-# l[-1] = temp
-# print(l)
-
-# def swap(lst):
-#   if len (lst)>1:
-#     lst[0],lst[-1] = lst[-1],lst[0]
-#     return lst
-# n=[1,2,3]
-# r = (swap(n))
-# print(r)
-
-# l.reverse()
-# print(l)
-
-# print(l[::-1])
-
-'''72. How do you clear a list in Python using different methods?'''
-# l = [1,2,3,4]
-# l.clear()
-# print(l)
-
-# del l[:]
-# print(l)
-
-
-'''73. Write a program to find the second largest number in the '''
-# list1 = [90, 11, 20, 40, 100,95]
-# def largest(num):
-#     num = list(set(num))
-#     num.sort(reverse=True)
-#     if len(num)>1:
-#         return num[1]
-#     else:
-#         return None
-# s = largest(list1)
+l=[1,1,2,3,2,2,2,2,4,5,6,5]
+# unique_l=[]
+# for i in l:
+#     if i not in unique_l:
+#         unique_l.append(i)
+# print(unique_l)
+    
+# s = list(set(l))
 # print(s)
 
 
-'''74. Write a Python program to illustrate arithmetic operations (+, -, *, /).'''
-# def arithmetic_ope(a,b):
-#     add = a+b
-#     sub = a-b
-#     multi = a*b
-#     div = a/b if b != 0 else None
-#     return add,sub,multi,div
-# num1 = 15
-# num2 = 3
-# add,sub,multi,div = arithmetic_ope(num1,num2)
-# print(add)
-# print(sub)
-# print(multi)
-# print(div)
 
-
-'''75. By using indexing, find the middle word in the string "This is my interview python question".'''
-# s = "This is my interview python question"
-# a = s.split(" ")
-# print(a)
-# print(a[2],a[3])
-
-# m = len(a) // 2
-# mm = a[m]
-# print(mm)
-
-'''76. By using typecasting, convert data types: int to float, float to int,
-complex to int, int to complex, complex to float.'''
-# a = 3
-# b =float(a)
-# c = complex(b)
-# s = 3+5j
-# d = s.real
-# print(type(d))
-# f = int(d)
-# print(type(f))
-
-
-'''77. Find the output of the following 
-input: ["HI", "hello", (1, 2, 3, 4), "a", "b"].'''
-# l = ["HI", "hello", (1, 2, 3, 4), "a", "b"]
-# print(l)
-
-'''78. Extract country, state, city, and pincode from the string "INDTGHYD500082".'''
-# l= "INDTGHYD500082"
-# country = l[0:3]
-# print("country:",country)
-# s = l[3:5]
-# print("state:",s)
-# c = l[5:8]
-# print("city:",c)
-# p = l[8::]
-# print("city:",p)
-
-
-'''79. Given the dictionary
- item = {'mobile': 300, 'laptop': 400, 'tab': 200}, 
- format and print the output as
-   "ITEM: mobile, QUANTITY: 3, PRICE: 300, TOTAL_PRICE: 900".'''
-
-items = {'mobile': 300, 'laptop': 400, 'tab': 200}
-# for key in items:
-#     print(f"ITEM:{key}")
-#     break
-# c = items.keys()
-# co =(len(c))
-# print(f"quantity:{co}")
-# s = items['mobile']
-# print("price:",s)
-# t = sum(items.values())
-# print("total_amount:",t)
-
-
-# for key in items:
-#     break
-# a = len(items.keys())
-# s = sum(items.values())
-# print(f"ITEM:{key},QUANTITY:{a},PRICE:{items['mobile']},TOTAL_PRICE:{s}")
-
-
-'''80. Given the list cities = ['hyd', 'Chennai', 'Bangalore'], 
-use if-else conditions to print the city names.'''
-
-# c =  ['hyd', 'Chennai', 'Bangalore']
-# for i in c:
-#     if i == 'hyd':
-#         print("city:Hyd")
-#     elif i == 'Chennai':
-#         print('city:Chennai')
-#     elif i == 'Bangalore':
-#         print("city:Bangalore")
-#     else:
-#         print("city not recognized")    
-
-
-'''81. Convert the string "Welcome to Vaarahi" to all uppercase, 
-all lowercase, and swapcase.''' 
-# s = "Welcome to Vaarahi"
-# print(s.upper())
-# print(s.lower())
-# print(s.swapcase())
-
-
-'''82. Find how many times 2 is repeated in the 
-list [1, 2, 3, 4, 2, 5, 2, 5, 2, 6, 2, 6, 2].'''
-
-#l = [1, 2, 3, 4, 2, 5, 2, 5, 2, 6, 2, 6, 2]
-# print(l.count(2))
-
-# lst = [1, 2, 3, 4, 2, 5, 2, 5, 2, 6, 2, 6, 2]
-# count = 0
-# for i in lst:
-#     if i == 2:
-#         count += 1
-# print("Number of times 2 is repeated:", count)
-
-
-'''83. Given the list [1, 2, 3, 4, 3],
-how can you clear the list and remove the last element?'''
-# l = [1, 2, 3, 4, 3]
-# l.pop(-1)
-# print(l)
-# l.clear()
-# print(l)
-
-
-'''84. Concatenate the tuple ('apple', 'mango', 'orange') with a '#' separator.'''
-# t = ('apple', 'mango', 'orange')
-# print('#'.join(t))
-# print('#  '.join(t))
-
-
-'''85. Sort the dictionary
- {'ravi': 10, 'rajnish': 9, 'sanjeev': 15, 'yash': 2, 'suraj': 32} by key.'''
-# d = {'vinay': 10, 'sanjana': 9, 'yami': 15, 'teja': 2, 'sunil': 32}
-# s = dict(sorted(d.items()))
-# print(s)
-
-'''86. Given a dictionary, find the sum of all items. 
-Examples: {'a': 100, 'b': 200, 'c': 300} -> 600, 
-{'x': 25, 'y': 18, 'z': 45} -> 88.'''
-# d1 = {'a': 100, 'b': 200, 'c': 300}
-# d2 = {'x': 25, 'y': 18, 'z': 45} 
-# t1 = sum(d1.values())
-# t2 = sum(d2.values())
-# print(t1)
-# print(t2)
-
-
-# print(d1.keys())
-# print(d2.values())
-
-
-'''87. Given a dictionary, write a Python program to get the dictionary keys
- as a list. Examples: {1:'a', 2:'b', 3:'c'} -> [1, 2, 3], 
- {'A':'ant', 'B': 'ball'} -> ['A', 'B'].'''
-# l1 = {1:'a', 2:'b', 3:'c'}
-# print(l1.keys())
-
-# l2 = {'A':'ant', 'B': 'ball'} 
-# print(l2.keys())
+# 63. Write a Python function to find the largest element in a list without using built-in functions.
 
 
 
-'''88. Given a list, write a Python program to swap the first and last elements 
-of the list. Examples: [12, 35, 9, 56, 24] -> [24, 35, 9, 56, 12], 
-[1, 2, 3] -> [3, 2, 1].'''
 
-# l1 = [12, 35, 9, 56, 24] 
-# l1[0],l1[-1] = l1[-1], l1[0]
-# print(l1)
-
-# def swap_lst(l):
-#   l1[0],l1[-1] = l1[-1], l1[0]
-#   return l1
-# r = swap_lst(l1)
-# print(l1)
-
-# a = [1, 2, 3]
-# a[0], a[2] = a[2], a[0]
-# print(a)
-
-# def swap_list(l):
-#   l[0],l[-1] = l[-1],l[0]
-#   return l
-# r = swap_list(a)
-# print(r)
-
-
-'''89. Given the list [1, 6, 3, 5, 3, 4], check if the number 3 exists.'''
-
-
+# 64. Write a Python function to remove duplicates from a list while maintaining the order of elements.
+# 65. Write a Python function to find the missing number in a sequence of integers from 1 to n. Example: numbers = [1, 2, 4, 5].
+# 66. Write a Python function that takes a number as input and returns True if it's a prime number, otherwise False.
+# 67. Write a Python program to capitalize the first letter of a string.
+# 68. Write a Python function that accepts keyword arguments and prints them.
+# 69. Write a Python program that uses a global variable within a function.
+# 70. How do you find the length of a list? Example: [10, 20, 30, 40, 50].
+# 71. How do you swap the first and last elements of a list? Example: [1, 2, 3] -> [3, 2, 1].
+# 72. How do you clear a list in Python using different methods?
+# 73. Write a program to find the second largest number in the list [90, 11, 20, 40, 100].
+# 74. Write a Python program to illustrate arithmetic operations (+, -, *, /).
+# 75. By using indexing, find the middle word in the string "This is my interview python question".
+# 76. By using typecasting, convert data types: int to float, float to int, complex to int, int to complex, complex to float.
+# 77. Find the output of the following input: ["HI", "hello", (1, 2, 3, 4), "a", "b"].
+# 78. Extract country, state, city, and pincode from the string "INDTGHYD500082".
+# 79. Given the dictionary item = {'mobile': 300, 'laptop': 400, 'tab': 200}, format and print the output as "ITEM: mobile, QUANTITY: 3, PRICE: 300, TOTAL_PRICE: 900".
+# 80. Given the list cities = ['hyd', 'Chennai', 'Bangalore'], use if-else conditions to print the city names.
+# 81. Convert the string "Welcome to Vaarahi" to all uppercase, all lowercase, and swapcase.
+# 82. Find how many times 2 is repeated in the list [1, 2, 3, 4, 2, 5, 2, 5, 2, 6, 2, 6, 2].
+# 83. Given the list [1, 2, 3, 4, 3], how can you clear the list and remove the last element?
+# 84. Concatenate the tuple ('apple', 'mango', 'orange') with a '#' separator.
+# 85. Sort the dictionary {'ravi': 10, 'rajnish': 9, 'sanjeev': 15, 'yash': 2, 'suraj': 32} by key.
+# 86. Given a dictionary, find the sum of all items. Examples: {'a': 100, 'b': 200, 'c': 300} -> 600, {'x': 25, 'y': 18, 'z': 45} -> 88.
+# 87. Given a dictionary, write a Python program to get the dictionary keys as a list. Examples: {1:'a', 2:'b', 3:'c'} -> [1, 2, 3], {'A':'ant', 'B': 'ball'} -> ['A', 'B'].
+# 88. Given a list, write a Python program to swap the first and last elements of the list. Examples: [12, 35, 9, 56, 24] -> [24, 35, 9, 56, 12], [1, 2, 3] -> [3, 2, 1].
+# 89. Given the list [1, 6, 3, 5, 3, 4], check if the number 3 exists.
 # 90. Find the output of the input [2, 3, 5, 6, 7] to return an empty list.
 # 91. Merge two dictionaries: dict1 = {'a': 10, 'b': 8}, dict2 = {'d': 6, 'c': 4}.
 # 92. Concatenate a list and a string using the + operator and convert the result to a tuple.
 # 93. Return a tuple after concatenating the list ['india', 'is'] and the string 'best'.
-'''94. Write a Python program to find the index of a specific element in a list.'''
-
-
+# 94. Write a Python program to find the index of a specific element in a list.
 '''95. Write a Python program to print the following pattern using nested loops.
 *
 **
 ***
 ****
 *****'''
+
 # for i in range(1,6):
-#   for j in range(i):
-#     print('*',end='')
-#   print()
-
-
-# for i in range(1,11):
-#   for j in range(i):
-#     print('*',end='')
-#   print()
-
-# for row in range(1,6):
-#   for col in range(row):
-#     print('*',end='')
-#   print()
-
+#     print(i*'*')
+  
 
 # 91. How would you read a large CSV file in chunks and process each chunk?
 # 92. Write a function to calculate the moving average of a list.
@@ -756,11 +588,20 @@ of the list. Examples: [12, 35, 9, 56, 24] -> [24, 35, 9, 56, 12],
 # ------------------------------------------
 # File Operations: 
 
-# 1) Create a text file with below content and get count of word (the/THE)
+'''1) Create a text file with below content and get count of word (the/THE)'''
 
-# "India is the fastest-growing economy. India is looking for more investments around the globe. The whole world is looking at India as a great market. Most of the Indians can foresee the heights that India is capable of reaching."
+l = "India is the fastest-growing economy. India is looking for more investments around the globe. The whole world is looking at India as a great market. Most of the Indians can foresee the heights that India is capable of reaching."
+# word_count=l.split()
+# s= word_count.count('the')
+# v= word_count.count('The')
+# print(s)
+# print(v)
 
-# 2) Write a function in Python to count uppercase character in the text file created above.
+
+
+'''2) Write a function in Python to count uppercase character in the text file created above.'''
+
+
 
 # -----------------------------------------------
 # Pandas: 
@@ -787,10 +628,16 @@ of the list. Examples: [12, 35, 9, 56, 24] -> [24, 35, 9, 56, 12],
 1) Print the second item in the fruits list.'''
 fruits = ["apple", "banana", "cherry"]
 # print(fruits[1])
+# print(fruits[-2])
+# print(fruits[::-1])
 
 '''2)Change the value from "apple" to "kiwi", in the fruits list.'''
-# a = ["apple", "banana", "cherry"]
+#a = ["apple", "banana", "cherry"]
 # a[0] = "kiwi"
+# print(a)
+
+
+# a[0] = "vinay"
 # print(a)
 
 '''3)Use the append method to add "orange" to the fruits list.'''
@@ -813,6 +660,7 @@ fruits = ["apple", "banana", "cherry"]'''
 '''6)Use negative indexing to print the last item in the list.'''
 # fruits = ["apple", "banana", "cherry"]
 # print(fruits[::-1])
+# print(fruits[-1])
 
 '''7)Use a range of indexes to print the third, fourth, and fifth item in the list.'''
 # fruits = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
@@ -825,12 +673,12 @@ fruits = ["apple", "banana", "cherry"]'''
 # print(len(fruits))
 
 '''9) List=[0,1,0,2,0,3] get output as [1,2,3,0,0,0]'''
-list=[0,1,0,2,0,3] 
+l=[0,1,0,2,0,3] 
 # List1.sort()
-# print(List1)
-# c = 0
-# list1=[]
-# list.sort()
+# print(List1)     
+# c = 0                                    
+# list1=[]                                  
+# list.sort()                             
 # for i in list:
 #     if i != 0:
 #         list1.append(i)
@@ -840,6 +688,38 @@ list=[0,1,0,2,0,3]
 # for i in range(c):
 #     list1.append(0)
 # print(list1)
+
+
+# c = 0
+# l1 = []
+# l.sort()
+# for i in l:
+#     if i != 0:
+#         l1.append(i)
+#     else:
+#         c = c+1
+
+# for i in range(c):
+#     l1.append(0)
+# print(l1)
+
+
+
+
+# l1=[]
+# l1.sort()
+# c=0
+# for i in l:
+#     if i!=0:
+#         l1.append(i)
+#     else:
+#         c=c+1
+
+# for i in range(c):
+#     l1.append(0)
+# print(l1)
+
+
 
 
 # list1=[]
@@ -875,7 +755,7 @@ operator <
 for loop 
 if condition class'''
 
-# x=[20,50,10,5,99,39,11,6]
+x=[20,50,10,5,99,39,10,20,20,11,6]
 # asscending = []
 # while x:
 #     min_value = x[0]
@@ -886,7 +766,7 @@ if condition class'''
 #     x.remove(min_value)
 # print("ascending order:",asscending)
 
-# x=[20,50,10,5,99,39,11,6]
+x=[20,50,10,5,99,39,11,6]
 # desc = []
 # while x:
 #     max_value = x[0]
@@ -901,33 +781,80 @@ if condition class'''
 #     for j in range(0,len(x)-i-1):
 #         if x[j] > x[j+1]:
 #             x[j],x[j+1] = x[j+1],x[j]
-# print(x)
+# print("assending_ordre: ", x)
+
+
 # for i in range(len(x)):
 #     for j in range(0,len(x)-i-1):
 #         if x[j] < x[j+1]:
 #             x[j],x[j+1] = x[j+1],x[j]
-# print(x)
+# print("descnding_order: ",x)
+
+# l = [10,20,25,6,36,9,5,9,525,233,41]
+# for i in range(len(l)):
+#     for j in range(len(l)-i-1):
+#         if l[j]>l[j+1]:
+#             l[j],l[j+1] = l[j+1],l[j]
+# l.sort()
+# print("ASSENDING ORDER : ",l)
 
 
 
 '''13) Python program to find largest number and second largest number in a list
 
-list1 = [10, 20, 20, 4, 45, 45, 45, 99, 99]'''
-# list1 = [10, 20, 20, 4, 45, 45, 45, 99, 99]
-# for i in range(len(list1)):
-#     for j in range (len(list1)-i-1):
-#        if list1[j] < list1[j+1]:
-#             list1[j],list1[j+1] = list1[j+1],list1[j]
-# print(list1)
-# # print("the largest no:",list1[0])
-# # print("the largest no:",list1[2])
+l= [10, 20, 20, 4, 45, 45, 45, 99, 99]'''
+# l= [10, 20, 20, 4, 45, 45, 45, 99, 99]
+# for i in range(len(l)):
+#     for j in range (len(l)-i-1):
+#        if l[j] < l[j+1]:
+#             l[j],l[j+1] = l[j+1],l[j]
+# print(l)
+# print("the largest no:",l[0])
+# print("the secound largest no:",l[2])
+# print("the third largest no:",l[5])
+
 # a = []
-# for i in list1:
+# for i in l:
 #     if i not in a:
 #         a.append(i)
+#         a.sort()
 # print(a)
-# print("largest no:",a[0])
-# print("secound high no:",a[1])
+# print("largest no:",a[-1])
+# print("secound high no:",a[-2])
+
+
+# a =[]
+# for i in l:
+#     if i not in a:
+#         a.append(i)
+#         a.sort()
+# print(a)
+# print(l[0])
+# print(l[-1])
+
+l = [10,20,30,40,20,52,56,85,96,200]
+a = []
+# for i in l:
+#     if i not in a:
+#         a.append(i)
+#         a.sort()
+# print(a)
+# print("first higest no :",a[-1])
+# print("secound higest no :",a[-2])
+
+
+
+
+# for i in range(len(l)):
+#     for j in range(len(l)-i-1):
+#         if l[j] > l[j+1]:
+#             l[j],l[j+1] = l[j+1],l[j]
+# print(l)
+# print("first higest no :",l[-1])
+# print("secound higest no :",l[-2])
+
+
+
 
 
 '''14) Count occurance of an element in the list ex:8
@@ -938,8 +865,8 @@ lst = [8, 6, 8, 10, 8, 20, 10, 8, 8]'''
 # print("8 is ",element_count,"times in the list")
 
 '''15) Concatenate two lists index-wise'''
-list1 = ["M", "na", "i", "Ke"]
-list2 = ["y", "me", "s", "lly"]
+# list1 = ["M", "na", "i", "Ke"]
+# list2 = ["y", "me", "s", "lly"]
 # a = list1[0]+list2[0],list1[1]+list2[1],list1[2]+list2[2],list1[3]+list2[3]
 # print(a)
 
@@ -951,6 +878,15 @@ list2 = ["y", "me", "s", "lly"]
 #     lst.append(list1[i]+list2[i])
 # print(lst)
    
+
+# list1 = ["M", "na", "i", "vi"]
+# list2 = ["y", "me", "s", "nay"]
+# lst = []
+# for i in range(len(list1)):
+#     lst.append(list1[i]+list2[i])
+# print(lst)
+
+
 
 '''Dictionary Exercise:'''
 '''1)Use the get method to print the value of the "model" key of the car dictionary.
@@ -1033,7 +969,16 @@ program to get output adic'''
 
 # keys = ['Ten', 'Twenty', 'Thirty']
 # values = [10, 20, 30]
-# result = {}
+result = {}
+# for i in range(len(keys)):
+#     result[keys[i]] = values[i]
+# print(result)
+
+
+
+# keys = ['NAME','AGE','SEX']
+# values = ['vinay',25,'M']
+
 # for i in range(len(keys)):
 #     result[keys[i]] = values[i]
 # print(result)
@@ -1105,8 +1050,19 @@ str1 = "P@#yn26at^&i5ve"
 # print("Symbols:", symbol_count)
         
       
-#    TASK 10
+#                                                  TASK 10
 # file = "sale_data_usa_06-01-2025.csv"
+# print(file)
+# a = file.split('.')
+# print(a)
+# date = a[0][-10:]
+# # print("Date:",date)
+# Format = a[1]
+# print(f"DATE is :{date},\nFORMAT is : {Format}")
+
+
+
+
 # date = 06-01-2025
 # formate = csv
 # a = file.split('_')
@@ -1128,121 +1084,7 @@ str1 = "P@#yn26at^&i5ve"
 # print("formate:",formate)
 
 
-###                   STRING
-'''Basic String Operations
-How do you concatenate two strings in Python?'''
-# s1 = "vinay"
-# s2 = "kumar"
-# print(s1+s2)
 
-
-'''What is the result of "Hello" + "World"?'''
-
-
-# How do you repeat a string multiple times?
-
-# What is the purpose of the len() function?
-
-# How do you check if a string contains a specific substring?
-
-# String Methods
-# What does the str.upper() method do?
-
-# How do you convert a string to lowercase?
-
-# What is the difference between str.find() and str.index()?
-
-# How do you replace a substring within a string?
-
-# What is the purpose of the str.strip() method?
-
-# String Slicing
-# How do you get the first character of a string?
-
-# How do you get the last character of a string?
-
-# How do you extract a substring from a string?
-
-# What is the result of "Hello"[1:4]?
-
-# How do you reverse a string using slicing?
-
-# String Formatting
-# How do you format a string using the format() method?
-
-# What is an f-string, and how do you use it?
-
-# How do you include a variable in a string?
-
-# What is the purpose of the % operator in string formatting?
-
-# How do you align text to the right using string formatting?
-
-# String Escaping
-# How do you include a newline character in a string?
-
-# How do you escape special characters in a string?
-
-# What is the purpose of the r prefix in string literals?
-
-# How do you include double quotes inside a string?
-
-# How do you represent a tab character in a string?
-
-# Regular Expressions
-# How do you check if a string matches a regular expression?
-
-# What is the purpose of the re.search() function?
-
-# How do you find all occurrences of a pattern in a string?
-
-# What does the re.sub() function do?
-
-# How do you split a string using a regular expression?
-
-# String Comparison
-# How do you compare two strings for equality?
-
-# What is the difference between == and is when comparing strings?
-
-# How do you check if a string starts with a specific prefix?
-
-# How do you check if a string ends with a specific suffix?
-
-# How do you perform a case-insensitive string comparison?
-
-# Advanced String Operations
-# How do you convert a string to a list of characters?
-
-# How do you join a list of strings into a single string?
-
-# How do you count the occurrences of a character in a string?
-
-# What is the purpose of the str.zfill() method?
-
-# How do you center-align text in a string?
-
-# Miscellaneous
-# How do you remove whitespace from the beginning and end of a string?
-
-# How do you check if a string contains only digits?
-
-# What is the purpose of the str.partition() method?
-
-# How do you check if a string is a valid identifier?
-
-# How do you convert a string to an integer?
-
-# String Encoding and Decoding
-# How do you encode a string to bytes?
-
-# How do you decode bytes to a string?
-
-# What is the difference between UTF-8 and ASCII encoding?
-
-# How do you handle Unicode characters in a string?
-
-# How do you read a text file and store its contents as a string?
 
 
 
