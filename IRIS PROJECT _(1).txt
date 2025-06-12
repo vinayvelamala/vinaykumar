@@ -1,0 +1,63 @@
+                                                                            IRIS PROJECT
+INTRODUCTION:
+             The iris  project is a popular dataset commonly used in machine learning and data analysis. It involues  the classification of iris flowers into different species based on their
+sepal length, speal width, petal length, petal width. This  dataset is  often used as a beginners examples for understanding and implementing various machine learning algorithms. It's
+great  starting point to explore classification techniques and gain hands on experience in the field of  machine learning.
+
+
+PROJECT SCOPE:
+
+        1.DATA COLLECTION:
+                          Gather the iris dataset, which includes measurments of speal length, speal width,petal length, petal width for different iris flowers species.
+
+        2. Libraries & Versions:
+
+                 1.        -> Name    : Numpy
+                           -> Version : 1.25.1
+                           -> Purpose : "Numpy is used in the project for efficient numerical operations and array manipulation." 
+
+                 2.        -> Name    : Pandas
+                           -> Version : 2.0.3
+                           -> Purpose : "Pandas is used in the project for efficient data analysis and manipulation."
+
+                 3.        -> Name    : Seaborn
+                           -> Version : 0.12.2
+                           -> Purpose : The purpose of using season in the project could be to analyze and incorporate seasonal patterns in the data 
+
+                 4.        -> Name    : Matplotlib
+                           -> Version : 3.7.2
+                           -> Purpose : Matplotlib is used in the project to create visualizations and plots for data analysis.
+
+                5.         -> Name    : Scipy
+                           -> Version : 1.11.1
+                           -> Purpose : he purpose of using SciPy in the project is to enhance scientific computing capabilities.
+
+               6.          -> Name    : Scikit- learn
+                           -> Version : 1.2.1
+                           ->Purpose  : The purpose of using scikit-learn in the project is to enhance machine learning capabilities. 
+
+               7.          -> Name    : Mysql-connector-python
+                           -> Version : 0.4.2
+                           -> Purpose : The purpose of using the MySQL Connector Python is to connect Python with a MySQL database. 
+
+       
+        3. Data Preprocessing:
+                          Clean and preprocess the dataset by handling missing values, removing outliers, and normalizing the data if necessary.
+
+        4. Exploratory Data Analysis (EDA): 
+                          Perform EDA to gain insights into the dataset, visualize the distribution of features, and identify any patterns or correlations.
+
+        5. Model Selection:
+                          Choose appropriate machine learning algorithms for classification, such as logistic regression, decision trees, or support vector machines.
+
+        6. Model Training:
+                         Split the dataset into training and testing sets. Train the selected models on the training data and evaluate their performance using appropriate metrics.
+
+        7. Model Evaluation and Selection: 
+                         Compare the performance of different models and select the one with the highest accuracy or other desired evaluation metrics.
+
+        8. Model Deployment: 
+                         Once you have a trained and selected model, you can deploy it to make predictions on new, unseen iris flower samples.
+
+
+        

@@ -1,0 +1,51 @@
+-- select * | c1,c2,c3 from table_name;
+-- select * | c1,c2,c3 from table_name where condations;
+
+select * from customer where customerid =1;
+select * from customer where customerid <> 1;
+
+select * from products where stock <= 50;
+select * from products where stock >= 150;
+select * from products where category in ( 'Electronics','Furniture');
+select * from products where category not in ( 'Electronics','Furniture');
+
+select * from products where productname like 'HEAD%';
+select * from products where productname like '%s';
+select * from products where productname like '%a%';
+
+select * from sales where saledate between( '2024-01-01') and ('2024-01-20' );
+select * from sales where saledate  like '%01-15%';
+
+update sale
+set saledate =null where saleid=10;
+
+alter table customer
+add age int;
+
+update customer 
+set age= 20 where customerid<>10;
+
+select * from customer where age is not null;
+
+select customerid from customer 
+where customerid =1  and age <25 ;
+
+
+select productname, price, (price*81) as price_usd 
+from products where  price*81> 100*81; 
+
+select distinct customerRegion,saleID from sales;
+
+select * from sales;
+
+
+select * from products where price between 50 and 150;
+select * from products where price >= 50 and price <= 150;
+
+
+
+
+
+
+
+select * from customer where customerid =1 or age =20;
