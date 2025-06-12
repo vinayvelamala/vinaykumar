@@ -1,0 +1,85 @@
+Mini Project:  E-Commerce Database Design and Documentation
+Project Title: E-Commerce Database System
+
+Objective: To design a scalable e-commerce database system that includes:
+Transactional Database - For storing real-time operations data.
+Data Warehouse - For analytical reporting and decision-making.
+Data Mart - Focused subset of the warehouse for department-specific analytics.
+The design will include tables, relationships, and columns aligned with Slowly Changing Dimension (SCD) types.
+
+
+Functional Requirements
+
+Transactional Database Requirements:
+Store information on users, products, orders, payments, inventory, shipping, and reviews.
+Capture real-time transactional data for processing e-commerce activities.
+Ensure 2NF for transactional consistency.
+
+
+Data Warehouse Requirements:
+Aggregate transactional data for historical analysis.
+Support Slowly Changing Dimensions (Type 1 and Type 2).
+Optimize for read-heavy analytics queries.
+
+Transactional  Requirements:
+------------------------------
+Provide department-specific insights such as Sales, Inventory, and Customer Behavior.
+
+Users	        -Stores customer details.
+Products	-Stores product catalog details.
+Orders	        -Tracks customer orders.
+OrderDetails	-Line items in customer orders.
+Payments	-Payment transactions for orders.
+Inventory	-Current stock details.
+Shipments	-Shipment and delivery tracking.
+Reviews	        -Customer reviews for products.
+coupons         -coupons need to create based on fixed or percentage 
+
+Data Warehouse:
+----------------
+DWH_Users	Stores customer dimensions.	UserStatus (SCD Type 2)
+DWH_Products	Stores product dimensions.	Price, Category (SCD Type 2)
+DWH_Time	Tracks time dimensions for analytics.	N/A
+DWH_Orders	Stores order transactions.	N/A
+DWH_Payments	Stores payment transactions.	N/A
+DWH_Inventory	Tracks inventory movements.	N/A
+DWH_Warehouse   captures inventory movements, stock levels,transactions.DWH_Warehouse_details.               
+
+
+
+
+
+Column Name	Description
+----------      -----------
+WarehouseKey	Primary key, uniquely identifies a record.
+TimeKey	Foreign key referencing timestamp.
+ProductKey	Foreign key referencing DimProducts.
+WarehouseID	Identifier for the warehouse.
+LocationKey	Foreign key referencing DimLocation.
+StockIn	Quantity of stock received into the warehouse.
+StockOut	Quantity of stock dispatched from the warehouse.
+StockReturn	Quantity of stock returned.
+StockDamaged	Quantity of stock damaged or lost.
+CurrentStock	Current stock level for the product.
+
+Data Mart:
+---------
+DM_Sales: Aggregated sales data for reporting.(daily sales - id,qty,revenue, discount, net revenue)
+DM_Warehouse: Aggregated  stock report(WarehouseKey,TimeKey,ProductKey,WarehouseID,StockIn,StockOut,CurrentStock)
+
+
+Documentation Deliverables: 
+ER Diagram for Transactional Database.
+Detailed SCD Implementation Guidelines.
+SQL Scripts for table creation.
+
+
+
+
+
+
+For idea check this portal 
+user https://zenkartstore.in/
+admin- https://zenkartstore.in/admin
+User: admin@gmail.com
+Password: 12345678
